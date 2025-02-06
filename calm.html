@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Breathe Calm Down</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="calm.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Calm Down</h1>
+      <!-- <p>Inhale for 4</p>
+      <p>Exhale for 6</p> -->
+    </header>
+    <main>
+      <section id="ready" class="ready">
+        <h2>Start your Practice</h2>
+        <button id="ready-btn" class="ready-btn">Begin</button>
+      </section>
+      <section id="begin" class="begin hidden">
+        <h2>Let's begin</h2>
+      </section>
+
+      <!-- <section class="calm-inhale hidden">
+        <h2>Inhale for 4 seconds</h2>
+        <p>Through your nose</p>
+      </section>
+      <section class="calm-exhale hidden">
+        <h2>Exhale for 6 seconds</h2>
+        <p>Through your mouth</p>
+      </section>
+      <section class="calm-complete hidden">
+        <h2>Complete</h2>
+        <p>Well done completing "time" minutes of Calm Down</p>
+        <button>Reset</button>
+      </section> -->
+
+      <!-- Animate -->
+      <div class="circle hidden" id="circle">
+        <p class="circle-calm-inhale">Inhale through your nose for 4</p>
+        <p class="circle-calm-exhale">Exhale through your mouth for 6</p>
+      </div>
+    </main>
+    <footer>
+      <h4>Time remaining:</h4>
+    </footer>
+    <script src="calm.js"></script>
+  </body>
+</html>
