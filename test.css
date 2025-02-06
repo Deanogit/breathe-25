@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: dotted red 1px; */
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #d7f0ea;
+  color: #0a0a0b;
+  position: relative;
+  height: 100vh;
+}
+
+/* Header */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* justify-content: space-between; */ // if nav
+  padding: 20px;
+  max-width: 90%;
+  margin: 0 auto;
+  height: 10%;
+}
+
+header h1 {
+  font-weight: 100;
+  letter-spacing: 0.16rem;
+  margin-bottom: 15px;
+}
+
+header p {
+  margin-bottom: 15px;
+}
+
+nav {
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px;
+  flex-start: flex-end;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 12px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  letter-spacing: 0.14rem;
+  color: #0a0a0b;
+  line-height: 1.4;
+  position: relative;
+}
+
+nav ul li a::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: #000;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:active {
+  color: #0a0a0b;
+}
+
+nav ul li a:hover::before {
+  transform: scaleX(1);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Main */
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  position: relative;
+}
+
+/* Circle */
+/* div { moved to calm.css
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20rem;
+    width: 20rem;
+    position: relative;
+    border-radius: 50%;
+    background-color: #fafafa;
+  } */
+
+/* Sections */
+
+section {
+  max-width: 80%;
+  padding: 30px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: opacity 1s;
+}
+
+section h2,
+section h3,
+footer h4 {
+  font-weight: 100;
+  letter-spacing: 0.15rem;
+  margin-bottom: 15px;
+}
+
+section h3 {
+}
+
+section p {
+  margin-bottom: 15px;
+  letter-spacing: 0.14rem;
+  font-weight: 100;
+}
+
+section button {
+  padding: 18px 32px;
+  letter-spacing: 0.06rem;
+  cursor: pointer;
+  background: #;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #0a0a0b;
+}
+
+/*
+  /* Calm Down */
+
+/* Animation */
+/*
+  main::before {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 500px;
+    height: 500px;
+    transform: translateX(125px);
+  
+    background-color: #fafafa;
+    left: 25%;
+    top: 25%;
+    border-radius: 50%;
+  }
+  
+  .circle-calm-inhale,
+  .circle-calm-exhale {
+    text-align: center;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    /* display: none; 
+  }
+  
+  .circle-calm-inhale {
+    animation: inhale linear 10s infinite;
+  }
+  
+  @keyframes inhale {
+    0% {
+      /opacity: 0;
+    }
+    35% {
+      opacity: 1;
+    }
+    45% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes exhale {
+    0% {
+      opacity: 0;
+    }
+    45% {
+      opacity: 0;
+    }
+    55% {
+      opacity: 1;
+    }
+    98 % {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  .circle-calm-exhale {
+    animation: exhale linear 10s infinite;
+  }
+  
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes disappear {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      display: none;
+    }
+  }
+  
+  // This is not working, how do I initiate this with javascript?
+  .disappear {
+    animation: disappear 3s 3s 1;
+  }
+  
+   @keyframes duration | easing-function | delay |
+  iteration-count | direction | fill-mode | play-state | name
+  
+  // make an animation for the begin to fade in & out
+  @keyframes begin {
+    0%,
+    100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  .begin {
+    animation: begin 4s 1;
+  }
+  */
