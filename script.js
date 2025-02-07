@@ -4,6 +4,10 @@ const intro = document.getElementById('intro');
 const begin = document.getElementById('begin');
 const choose = document.getElementById('choose');
 
+// object to store the time & choice
+// This doesnt seem to work when the index.html changes to calm.html
+const practice = {};
+
 const beginBtn = document.getElementById('beginBtn');
 
 beginBtn.addEventListener('click', function () {
@@ -19,6 +23,8 @@ const time10 = document.getElementById('time10');
 
 function time(e) {
   console.log(e.target.id);
+  localStorage.setItem('time', e.target.id);
+  console.log(localStorage.getItem('time'));
   begin.classList.toggle('hidden');
   choose.classList.toggle('hidden');
 }
