@@ -71,66 +71,106 @@ function choice(e) {
   console.log(e.target.id);
   // hide the choice section
   choose.classList.toggle('hidden');
+  //   // store which exercise is chosen
+  //   localStorage.setItem('type', e.target.id);
+  //   //check its stored correctly
+  //   console.log(localStorage.getItem('type'));
   // show the relevant exercise section
   const exercise = e.target.id;
   switch (exercise) {
     case 'chooseCalm':
       calm.classList.toggle('hidden');
+      localStorage.setItem('type', 'calm');
+      animate();
       break;
     case 'chooseClear':
       clear.classList.toggle('hidden');
+      localStorage.setItem('type', 'clear');
       break;
     case 'chooseRelax':
       relax.classList.toggle('hidden');
+      localStorage.setItem('type', 'relax');
       break;
     case 'chooseRelieve':
       relieve.classList.toggle('hidden');
+      localStorage.setItem('type', 'relieve');
       break;
     default:
       console.log('exercisio');
   }
 }
 
-// Initiate the animation for duration
-function exercise() {
+// Initiate the animation for exercise with duration
+function animate() {
+  // grab the time stored in localStorage
   const time = localStorage.getItem('time');
-  const type = localStorage.getItem('exercise');
-  console.log('here we go');
-  console.log(time, type);
+  console.log(time);
+
+  // grab the type of exercise, this isnt relevant atm
+  // const type = localStorage.getItem('exercise');
+  //console.log('here we go');
+  //console.log(time, type);
 
   // define the duration of practice
   let duration = 0;
   switch (time) {
     case 'time1':
-      duration = 60;
+      duration = 60000;
+      console.log(duration);
       break;
     case 'time2':
-      duration = 120;
+      duration = 120000;
       break;
     case 'time3':
-      duration = 180;
+      duration = 180000;
       break;
     case 'time5':
-      duration = 300;
+      duration = 300000;
       break;
     case 'time10':
-      duration = 600;
+      duration = 600000;
       break;
     default:
       console.log('not working!');
   }
   console.log(duration);
 
+  // Practice making a countdown timer
+
+  // let finish = new Date().getTime();
+  //console.log(finish); // returns 13 digit timestamp
+
+  // Update countdown every 1000 miliseconds
+  let x = setInterval(function () {
+    duration -= 1000;
+    console.log(duration);
+    // let now = new Date().getTime();
+    // let distance = duration + now;
+    // let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    // let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    // console.log(minutes, seconds);
+    if (duration < 0) {
+      clearInterval(x);
+      document
+        .getElementById(localStorage.getItem('type'))
+        .classList.toggle('hidden');
+      intro.classList.toggle('hidden');
+      localStorage.clear;
+    }
+  }, 1000);
+
+  console.log(duration);
+
   // define the type of practice
 
-  let practice;
-  switch (type) {
-    case 'chooseCalm':
-      chooseCalm.classList.toggle('hidden');
-      break;
-    default:
-      console.log('broken');
-  }
+  //   let practice;
+  //   switch (type) {
+  //     case 'chooseCalm':
+  //       chooseCalm.classList.toggle('hidden');
+  //       break;
+  //     default:
+  //       console.log('broken');
+  //   }
 }
 
 // So how does this all fit together?
