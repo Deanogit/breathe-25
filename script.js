@@ -6,12 +6,11 @@ const choose = document.getElementById('choose'); // grab the choose section
 
 const beginBtn = document.getElementById('beginBtn'); // grab the intro beginBtn
 
-// when the intro beginBtn is clicked, hide the intro and show the begin section
-
-beginBtn.addEventListener('click', function () {
-  intro.classList.toggle('hidden');
-  begin.classList.toggle('hidden');
-});
+// Grab the animation states
+const calm = document.getElementById('calm');
+const clear = document.getElementById('clear');
+const relax = document.getElementById('relax');
+const relieve = document.getElementById('relieve');
 
 // grab the time elements
 const time1 = document.getElementById('time1');
@@ -19,6 +18,25 @@ const time2 = document.getElementById('time2');
 const time3 = document.getElementById('time3');
 const time5 = document.getElementById('time5');
 const time10 = document.getElementById('time10');
+
+// grab the choice elements
+const chooseCalm = document.getElementById('chooseCalm');
+const chooseClear = document.getElementById('chooseClear');
+const chooseRelax = document.getElementById('chooseRelax');
+const chooseRelieve = document.getElementById('chooseRelieve');
+
+// grab the exercise buttons
+const calmBtn = document.getElementById('calmBtn');
+const clearBtn = document.getElementById('clearBtn');
+const relaxBtn = document.getElementById('relaxBtn');
+const relieveBtn = document.getElementById('relieveBtn');
+
+// when the intro beginBtn is clicked, hide the intro and show the begin section
+
+beginBtn.addEventListener('click', function () {
+  intro.classList.toggle('hidden');
+  begin.classList.toggle('hidden');
+});
 
 function time(e) {
   // when a time element is clicked
@@ -41,12 +59,6 @@ time3.addEventListener('click', time);
 time5.addEventListener('click', time);
 time10.addEventListener('click', time);
 
-// grab the choice elements
-const chooseCalm = document.getElementById('chooseCalm');
-const chooseClear = document.getElementById('chooseClear');
-const chooseRelax = document.getElementById('chooseRelax');
-const chooseRelieve = document.getElementById('chooseRelieve');
-
 chooseCalm.addEventListener('click', choice);
 chooseClear.addEventListener('click', choice);
 chooseRelax.addEventListener('click', choice);
@@ -60,13 +72,26 @@ function choice(e) {
   // hide the choice section
   choose.classList.toggle('hidden');
   // show the relevant exercise section
-
-  //   console.log(e.target.id);
-  //   localStorage.setItem('exercise', e.target.id);
-  //   choose.classList.toggle('hidden');
-  //   exercise();
+  const exercise = e.target.id;
+  switch (exercise) {
+    case 'chooseCalm':
+      calm.classList.toggle('hidden');
+      break;
+    case 'chooseClear':
+      clear.classList.toggle('hidden');
+      break;
+    case 'chooseRelax':
+      relax.classList.toggle('hidden');
+      break;
+    case 'chooseRelieve':
+      relieve.classList.toggle('hidden');
+      break;
+    default:
+      console.log('exercisio');
+  }
 }
 
+// Initiate the animation for duration
 function exercise() {
   const time = localStorage.getItem('time');
   const type = localStorage.getItem('exercise');
