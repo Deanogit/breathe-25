@@ -40,12 +40,61 @@ const chooseClear = document.getElementById('chooseClear');
 const chooseRelax = document.getElementById('chooseRelax');
 const chooseRelieve = document.getElementById('chooseRelieve');
 
-function choice(e) {
-  console.log(e.target.id);
-  choose.classList.toggle('hidden');
-}
-
 chooseCalm.addEventListener('click', choice);
 chooseClear.addEventListener('click', choice);
 chooseRelax.addEventListener('click', choice);
 chooseRelieve.addEventListener('click', choice);
+
+function choice(e) {
+  console.log(e.target.id);
+  localStorage.setItem('exercise', e.target.id);
+  choose.classList.toggle('hidden');
+  exercise();
+}
+
+function exercise() {
+  const time = localStorage.getItem('time');
+  const type = localStorage.getItem('exercise');
+  console.log('here we go');
+  console.log(time, type);
+
+  // define the duration of practice
+  let duration = 0;
+  switch (time) {
+    case 'time1':
+      duration = 60;
+      break;
+    case 'time2':
+      duration = 120;
+      break;
+    case 'time3':
+      duration = 180;
+      break;
+    case 'time5':
+      duration = 300;
+      break;
+    case 'time10':
+      duration = 600;
+      break;
+    default:
+      console.log('not working!');
+  }
+  console.log(duration);
+
+  // define the type of practice
+
+  let practice;
+  switch (type) {
+    case 'chooseCalm':
+      chooseCalm.classList.toggle('hidden');
+      break;
+    default:
+      console.log('broken');
+  }
+}
+
+// So how does this all fit together?
+
+// 1 choice eventlistener toggles intro and toggles choice
+// 2 animation is called with the duration
+// 3 when duration ends intro and choice are toggled
