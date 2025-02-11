@@ -136,6 +136,14 @@ function animate() {
   setTimeout(() => {
     letsBegin.classList.toggle('hidden');
     circle.classList.toggle('hidden');
+    console.log(getComputedStyle(document.getElementById('circle')).display);
+    console.log(
+      getComputedStyle(document.getElementById('circle')).backgroundColor
+    );
+    console.log(document.querySelector('#circle'));
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('circle').style.backgroundColor = '#fafafa';
+    });
   }, 3000);
 
   // grab the type of exercise, this isnt relevant atm
@@ -205,7 +213,7 @@ function animate() {
   // Start countdown after "Let's Begin" animation
   setTimeout(() => {
     // Immediately update timer display before countdown starts
-    timerCountdown.textContent = duration / 1000; // this clears the 0 or -1
+    timerCountdown.textContent = duration / 1000; // this stops the timer from the previous iteration being rendered
 
     let x = setInterval(function () {
       if (duration > 0) {
@@ -215,6 +223,7 @@ function animate() {
       } else {
         clearInterval(x);
         circle.classList.toggle('hidden');
+
         intro.classList.toggle('hidden');
         localStorage.clear();
       }
