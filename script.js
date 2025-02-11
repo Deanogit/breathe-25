@@ -37,6 +37,12 @@ const letsBegin = document.getElementById('lets-begin');
 // grab the circle section
 const circle = document.getElementById('circle');
 
+// grab the inhale, hold & exhale divs
+const inhale = document.getElementById('inhale');
+const hold1 = document.getElementById('hold1');
+const exhale = document.getElementById('exhale');
+const hold2 = document.getElementById('hold2');
+
 // grab the timer & timer countdown
 const timer = document.getElementById('timer');
 const timerCountdown = document.getElementById('timer-countdown');
@@ -220,6 +226,7 @@ function animate() {
   setTimeout(() => {
     // Immediately update timer display before countdown starts
     timerCountdown.textContent = duration / 1000; // this stops the timer from the previous iteration being rendered
+    animateCalm();
 
     let x = setInterval(function () {
       if (duration > 0) {
@@ -282,3 +289,45 @@ function animate() {
 // - if hold, show "hold"
 // - repeat for duration
 // - hide animation
+
+// calm
+// function animateCalm() {
+//   // run once immediately
+//   inhale.classList.toggle('hidden');
+//   setTimeout(() => {
+//     inhale.classList.toggle('hidden');
+//     exhale.classList.toggle('hidden');
+//   }, 4000);
+//   setTimeout(() => {
+//     exhale.classList.toggle('hidden');
+//   });
+
+//   // repeat every 10 seconds
+//   setInterval(() => {
+//     inhale.classList.toggle('hidden');
+//     setTimeout(() => {
+//       inhale.classList.toggle('hidden');
+//       exhale.classList.toggle('hidden');
+//     }, 4000);
+//     setTimeout(() => {
+//       exhale.classList.toggle('hidden');
+//     }, 10000);
+//   }, 10000);
+// }
+
+////////////
+// chatgpt recursive
+function animateCalm() {
+  inhale.classList.toggle('hidden');
+
+  setTimeout(() => {
+    inhale.classList.toggle('hidden');
+    exhale.classList.toggle('hidden');
+  }, 4000);
+
+  setTimeout(() => {
+    exhale.classList.toggle('hidden');
+    // Restart the animation cycle
+    animateCalm();
+  }, 10000);
+}
