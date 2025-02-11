@@ -32,20 +32,20 @@ const relaxBtn = document.getElementById('relaxBtn');
 const relieveBtn = document.getElementById('relieveBtn');
 
 // when the intro beginBtn is clicked, hide the intro and show the begin section
-
 beginBtn.addEventListener('click', function () {
   intro.classList.toggle('hidden');
   begin.classList.toggle('hidden');
 });
 
+// Store the time in localStorage
 function time(e) {
   // when a time element is clicked
-  // check the console its working
-  console.log(e.target.id);
+  // // check the console its working
+  // // console.log(e.target.id);
   // set localStorage time
   localStorage.setItem('time', e.target.id);
-  // check the console its working
-  console.log(localStorage.getItem('time'));
+  // // check the console its working
+  // // console.log(localStorage.getItem('time'));
   // hide the begin section
   begin.classList.toggle('hidden');
   // show the choose section
@@ -64,47 +64,62 @@ chooseClear.addEventListener('click', choice);
 chooseRelax.addEventListener('click', choice);
 chooseRelieve.addEventListener('click', choice);
 
+// set the choice
 function choice(e) {
-  // Check its working by printing to the console
-  console.log('choice');
-  // Check the e.target.id is correct
-  console.log(e.target.id);
+  // // Check its working by printing to the console
+  // // console.log('choice');
+  // // Check the e.target.id is correct
+  // // console.log(e.target.id);
   // hide the choice section
   choose.classList.toggle('hidden');
   //   // store which exercise is chosen
   //   localStorage.setItem('type', e.target.id);
   //   //check its stored correctly
   //   console.log(localStorage.getItem('type'));
+
   // show the relevant exercise section
   const exercise = e.target.id;
   switch (exercise) {
     case 'chooseCalm':
       calm.classList.toggle('hidden');
       localStorage.setItem('type', 'calm');
-      animate();
+      // animate(); // this here can be moved to the calmBtn
       break;
     case 'chooseClear':
       clear.classList.toggle('hidden');
       localStorage.setItem('type', 'clear');
+      // animate(); // move to clearBtn
       break;
     case 'chooseRelax':
       relax.classList.toggle('hidden');
       localStorage.setItem('type', 'relax');
+      // animate(); // move to relaxBtn
       break;
     case 'chooseRelieve':
       relieve.classList.toggle('hidden');
       localStorage.setItem('type', 'relieve');
+      // animate(); // move to relieveBtn
       break;
     default:
-      console.log('exercisio');
+      console.log('fault with choice');
   }
 }
+
+calmBtn.addEventListener('click', animate);
+clearBtn.addEventListener('click', animate);
+relaxBtn.addEventListener('click', animate);
+relieveBtn.addEventListener('click', animate);
 
 // Initiate the animation for exercise with duration
 function animate() {
   // grab the time stored in localStorage
   const time = localStorage.getItem('time');
   console.log(time);
+  document
+    .getElementById(localStorage.getItem('type'))
+    .classList.toggle('hidden');
+  // console.log(e.target.id); // uncaught referenceError
+  // grab the
 
   // grab the type of exercise, this isnt relevant atm
   // const type = localStorage.getItem('exercise');
@@ -133,7 +148,7 @@ function animate() {
     default:
       console.log('not working!');
   }
-  console.log(duration);
+  // console.log(duration);
 
   // Practice making a countdown timer
 
@@ -151,15 +166,16 @@ function animate() {
     // console.log(minutes, seconds);
     if (duration < 0) {
       clearInterval(x);
-      document
-        .getElementById(localStorage.getItem('type'))
-        .classList.toggle('hidden');
+      // hide the animation
+      //   document
+      //     .getElementById(localStorage.getItem('type'))
+      //     .classList.toggle('hidden');
       intro.classList.toggle('hidden');
       localStorage.clear;
     }
   }, 1000);
 
-  console.log(duration);
+  // console.log(duration);
 
   // define the type of practice
 
@@ -173,8 +189,14 @@ function animate() {
   //   }
 }
 
-// So how does this all fit together?
-
-// 1 choice eventlistener toggles intro and toggles choice
-// 2 animation is called with the duration
-// 3 when duration ends intro and choice are toggled
+// So now the begin section works, the time section works, the choose section works,
+// the animation section needs to
+// - short animation with "lets begin"
+// - delay the countdown considering the duration of "lets begin"
+// - take the type of exercise and animate the circle (background also?)
+// - show the "Inhale through the nose"
+// - if hold, show "hold"
+// - show "exhale throuhg the mouth"
+// - if hold, show "hold"
+// - repeat for duration
+// - hide animation
