@@ -172,31 +172,76 @@ function animate() {
   // let finish = new Date().getTime();
   //console.log(finish); // returns 13 digit timestamp
 
+  //   setTimeout(() => {
+  //     // Update countdown every 1000 miliseconds
+  //     let x = setInterval(function () {
+  //       if (duration > 0) {
+  //         duration -= 1000;
+  //         console.log(duration);
+  //         timerCountdown.textContent = duration / 1000;
+  //       }
+  //       // let now = new Date().getTime();
+  //       // let distance = duration + now;
+  //       // let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  //       // let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  //       // console.log(minutes, seconds);
+  //       else if (duration <= 0) {
+  //         clearInterval(x);
+  //         // hide the animation
+  //         //   document
+  //         //     .getElementById(localStorage.getItem('type'))
+  //         //     .classList.toggle('hidden');
+  //         circle.classList.toggle('hidden');
+  //         intro.classList.toggle('hidden');
+  //         localStorage.clear();
+  //         // reset duration
+  //         // duration = 0; // this doesnt seem to be working... ?
+  //       }
+  //     }, 1000);
+  //   }, 3000);
+
+  //// chat GPT solution 1
+
+  // Start countdown after "Let's Begin" animation
   setTimeout(() => {
-    // Update countdown every 1000 miliseconds
+    // Immediately update timer display before countdown starts
+    timerCountdown.textContent = duration / 1000; // this clears the 0 or -1
+
     let x = setInterval(function () {
-      duration -= 1000;
-      console.log(duration);
-      timerCountdown.textContent = duration / 1000;
-      // let now = new Date().getTime();
-      // let distance = duration + now;
-      // let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      // let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      // console.log(minutes, seconds);
-      if (duration < 0) {
+      if (duration > 0) {
+        duration -= 1000;
+        console.log(duration);
+        timerCountdown.textContent = duration / 1000; // Update display
+      } else {
         clearInterval(x);
-        // hide the animation
-        //   document
-        //     .getElementById(localStorage.getItem('type'))
-        //     .classList.toggle('hidden');
         circle.classList.toggle('hidden');
         intro.classList.toggle('hidden');
-        localStorage.clear;
-        // reset duration
-        duration = 0;
+        localStorage.clear();
       }
     }, 1000);
   }, 3000);
+
+  ///// chat GPT solution #2
+  //   let countdownInterval; // Store interval globally
+
+  //   setTimeout(() => {
+  //     clearInterval(countdownInterval); // Stop any previous countdown
+
+  //     timerCountdown.textContent = duration / 1000;
+
+  //     countdownInterval = setInterval(function () {
+  //       if (duration > 0) {
+  //         duration -= 1000;
+  //         timerCountdown.textContent = duration / 1000;
+  //       } else {
+  //         clearInterval(countdownInterval);
+  //         circle.classList.toggle('hidden');
+  //         intro.classList.toggle('hidden');
+  //         localStorage.clear();
+  //       }
+  //     }, 1000);
+  //   }, 3000);
+
   // console.log(duration);
 
   // define the type of practice
