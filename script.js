@@ -31,6 +31,16 @@ const clearBtn = document.getElementById('clearBtn');
 const relaxBtn = document.getElementById('relaxBtn');
 const relieveBtn = document.getElementById('relieveBtn');
 
+// grab the lets-begin section
+const letsBegin = document.getElementById('lets-begin');
+
+// grab the circle section
+const circle = document.getElementById('circle');
+
+// grab the timer & timer countdown
+const timer = document.getElementById('timer');
+const timerCountdown = document.getElementById('timer-countdown');
+
 // when the intro beginBtn is clicked, hide the intro and show the begin section
 beginBtn.addEventListener('click', function () {
   intro.classList.toggle('hidden');
@@ -121,6 +131,13 @@ function animate() {
   // console.log(e.target.id); // uncaught referenceError
   // grab the
 
+  // show lets-begin & circle
+  letsBegin.classList.toggle('hidden');
+  setTimeout(() => {
+    letsBegin.classList.toggle('hidden');
+    circle.classList.toggle('hidden');
+  }, 3000);
+
   // grab the type of exercise, this isnt relevant atm
   // const type = localStorage.getItem('exercise');
   //console.log('here we go');
@@ -155,26 +172,31 @@ function animate() {
   // let finish = new Date().getTime();
   //console.log(finish); // returns 13 digit timestamp
 
-  // Update countdown every 1000 miliseconds
-  let x = setInterval(function () {
-    duration -= 1000;
-    console.log(duration);
-    // let now = new Date().getTime();
-    // let distance = duration + now;
-    // let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    // let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    // console.log(minutes, seconds);
-    if (duration < 0) {
-      clearInterval(x);
-      // hide the animation
-      //   document
-      //     .getElementById(localStorage.getItem('type'))
-      //     .classList.toggle('hidden');
-      intro.classList.toggle('hidden');
-      localStorage.clear;
-    }
-  }, 1000);
-
+  setTimeout(() => {
+    // Update countdown every 1000 miliseconds
+    let x = setInterval(function () {
+      duration -= 1000;
+      console.log(duration);
+      timerCountdown.textContent = duration / 1000;
+      // let now = new Date().getTime();
+      // let distance = duration + now;
+      // let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      // let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      // console.log(minutes, seconds);
+      if (duration < 0) {
+        clearInterval(x);
+        // hide the animation
+        //   document
+        //     .getElementById(localStorage.getItem('type'))
+        //     .classList.toggle('hidden');
+        circle.classList.toggle('hidden');
+        intro.classList.toggle('hidden');
+        localStorage.clear;
+        // reset duration
+        duration = 0;
+      }
+    }, 1000);
+  }, 3000);
   // console.log(duration);
 
   // define the type of practice
