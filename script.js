@@ -144,6 +144,12 @@ function animate() {
     document.addEventListener('DOMContentLoaded', function () {
       document.getElementById('circle').style.backgroundColor = '#fafafa';
     });
+    document.getElementById('circle').style.backgroundColor = '#fafafa';
+    document.getElementById('circle').style.height = '22rem';
+    document.getElementById('circle').style.width = '22rem';
+    document.getElementById('circle').style.borderRadius = '50%';
+    document.getElementById('circle').style.boxShadow =
+      '4px 4px 20px rgba(0,0,0,0.1';
   }, 3000);
 
   // grab the type of exercise, this isnt relevant atm
