@@ -121,7 +121,8 @@ function choice(e) {
   }
 }
 
-calmBtn.addEventListener('click', animate);
+// calmBtn.addEventListener('click', animate);
+calmBtn.addEventListener('click', calmTime1);
 clearBtn.addEventListener('click', animate);
 relaxBtn.addEventListener('click', animate);
 relieveBtn.addEventListener('click', animate);
@@ -226,8 +227,10 @@ function animate() {
   setTimeout(() => {
     // Immediately update timer display before countdown starts
     timerCountdown.textContent = duration / 1000; // this stops the timer from the previous iteration being rendered
+    // call the  animate function
     animateCalm();
 
+    //
     let x = setInterval(function () {
       if (duration > 0) {
         duration -= 1000;
@@ -239,6 +242,7 @@ function animate() {
 
         intro.classList.toggle('hidden');
         localStorage.clear();
+        clearInterval(calmInterval);
       }
     }, 1000);
   }, 3000);
@@ -278,6 +282,97 @@ function animate() {
   //   }
 }
 
+// ////////////////////
+// // Chatgpt animate version
+
+// // Utility function to toggle visibility
+// function toggleVisibility(elementId) {
+//   document.getElementById(elementId)?.classList.toggle('hidden');
+// }
+
+// // Utility function to delay execution using Promises
+// function delay(ms) {
+//   return new Promise((resolve) => setTimeout(resolve, ms));
+// }
+
+// // Main function to start the animation
+// async function animate() {
+//   const time = localStorage.getItem('time');
+//   const type = localStorage.getItem('type');
+
+//   console.log(`Selected time: ${time}`);
+
+//   if (type) toggleVisibility(type);
+
+//   // Show "Let's Begin" message
+//   toggleVisibility('letsBegin');
+//   await delay(3000); // Wait 3 seconds
+
+//   // Hide "Let's Begin", show the circle, and apply styles
+//   toggleVisibility('letsBegin');
+//   toggleVisibility('circle');
+
+//   const circle = document.getElementById('circle');
+//   if (circle) {
+//     circle.style.cssText = `
+//         background-color: #fafafa;
+//         height: 22rem;
+//         width: 22rem;
+//         border-radius: 50%;
+//         box-shadow: 4px 4px 20px rgba(0,0,0,0.1);
+//       `;
+//   }
+
+//   // Determine duration
+//   const timeMap = {
+//     time1: 60000,
+//     time2: 120000,
+//     time3: 180000,
+//     time5: 300000,
+//     time10: 600000,
+//   };
+
+//   const duration = timeMap[time] || 0;
+//   if (duration === 0) {
+//     console.error('Invalid time selected!');
+//     return;
+//   }
+
+//   // Start timer
+//   timerCountdown.textContent = duration / 1000;
+//   const calmInterval = animateCalm(); // Start breathing animation
+
+//   let remainingTime = duration;
+//   const countdownInterval = setInterval(() => {
+//     remainingTime -= 1000;
+//     timerCountdown.textContent = remainingTime / 1000;
+
+//     if (remainingTime <= 0) {
+//       clearInterval(countdownInterval);
+//       clearInterval(calmInterval); // Stop breathing animation
+//       toggleVisibility('circle');
+//       toggleVisibility('intro');
+//       localStorage.clear();
+//     }
+//   }, 1000);
+// }
+
+// // Improved breathing animation function
+// function animateCalm() {
+//   let calmInterval = setInterval(() => {
+//     inhale.classList.toggle('hidden');
+//     setTimeout(() => {
+//       inhale.classList.toggle('hidden');
+//       exhale.classList.toggle('hidden');
+//     }, 4000);
+//     setTimeout(() => {
+//       exhale.classList.toggle('hidden');
+//     }, 10000);
+//   }, 10000);
+
+//   return calmInterval; // Return interval ID to allow stopping it
+// }
+
 // So now the begin section works, the time section works, the choose section works,
 // the animation section needs to
 // - short animation with "lets begin"
@@ -291,43 +386,181 @@ function animate() {
 // - hide animation
 
 // calm
+
+let calmInterval;
+function animateCalm() {
+  //first clear any remaining setIntervals
+  if (calmInterval) {
+    clearInterval(calmInterval);
+  }
+
+  // run once immediately
+  inhale.classList.toggle('hidden');
+  setTimeout(() => {
+    inhale.classList.toggle('hidden');
+    exhale.classList.toggle('hidden');
+  }, 5000);
+  setTimeout(() => {
+    exhale.classList.toggle('hidden');
+    console.log(calmInterval);
+  }, 12000);
+
+  // repeat every 10 seconds
+  calmInterval = setInterval(() => {
+    inhale.classList.toggle('hidden');
+    setTimeout(() => {
+      inhale.classList.toggle('hidden');
+      exhale.classList.toggle('hidden');
+    }, 5000);
+    setTimeout(() => {
+      exhale.classList.toggle('hidden');
+      console.log(calmInterval);
+    }, 12000);
+  }, 12000);
+}
+
+////////////
+// chatgpt recursive
 // function animateCalm() {
-//   // run once immediately
 //   inhale.classList.toggle('hidden');
+
 //   setTimeout(() => {
 //     inhale.classList.toggle('hidden');
 //     exhale.classList.toggle('hidden');
 //   }, 4000);
+
 //   setTimeout(() => {
 //     exhale.classList.toggle('hidden');
-//   });
-
-//   // repeat every 10 seconds
-//   setInterval(() => {
-//     inhale.classList.toggle('hidden');
-//     setTimeout(() => {
-//       inhale.classList.toggle('hidden');
-//       exhale.classList.toggle('hidden');
-//     }, 4000);
-//     setTimeout(() => {
-//       exhale.classList.toggle('hidden');
-//     }, 10000);
+//     // Restart the animation cycle
+//     animateCalm();
 //   }, 10000);
 // }
 
-////////////
-// chatgpt recursive
-function animateCalm() {
-  inhale.classList.toggle('hidden');
+/////////
+// Chatgpt without recursion
+// function animateCalm() {
+//   inhale.classList.toggle('hidden');
 
+//   setTimeout(() => {
+//     inhale.classList.toggle('hidden');
+//     exhale.classList.toggle('hidden');
+//   }, 4000);
+
+//   setTimeout(() => {
+//     exhale.classList.toggle('hidden');
+//   }, 10000);
+// }
+
+// // Run the function on a loop without recursion
+// setInterval(animateCalm, 10000);
+
+// function calmTime1() {
+//   const sequence = [
+//     { action: 'inhale', duration: 5000 },
+//     { action: 'exhale', duration: 7000 },
+//     { action: 'inhale', duration: 5000 },
+//     { action: 'exhale', duration: 7000 },
+//     { action: 'inhale', duration: 5000 },
+//     { action: 'exhale', duration: 7000 },
+//     { action: 'inhale', duration: 5000 },
+//     { action: 'exhale', duration: 7000 },
+//     { action: 'inhale', duration: 5000 },
+//     { action: 'exhale', duration: 7000 },
+//     { action: 'inhale', duration: 5000 },
+//   ];
+
+//   let currentTime = 0; // Track elapsed time
+
+//   // Show initial elements
+//   calm.classList.remove('hidden');
+//   circle.classList.remove('hidden');
+//   inhale.classList.remove('hidden');
+
+//   // Loop through the sequence and schedule changes
+//   sequence.forEach((step, index) => {
+//     setTimeout(() => {
+//       inhale.classList.toggle('hidden');
+//       exhale.classList.toggle('hidden');
+//     }, currentTime);
+
+//     currentTime += step.duration; // Update the time for the next step
+//   });
+
+//   // Hide the circle and show intro after 1 minute
+//   setTimeout(() => {
+//     inhale.classList.add('hidden');
+//     circle.classList.add('hidden');
+//     intro.classList.remove('hidden');
+//   }, currentTime);
+// }
+
+//Write out the calm animation for 1 min from beginning to end
+function calmTime1() {
+  // start with inhale & circle
+  calm.classList.toggle('hidden');
+  circle.classList.toggle('hidden');
+  circle.style.cssText = `
+  background-color: #fafafa;
+  height: 22rem;
+  width: 22rem;
+  border-radius: 50%;
+  box-shadow: 4px 4px 20px rgba(0,0,0,0.1);
+  opacity: 1;
+`;
+  inhale.classList.toggle('hidden');
+  // switch to exhale
   setTimeout(() => {
     inhale.classList.toggle('hidden');
     exhale.classList.toggle('hidden');
-  }, 4000);
-
+  }, 5000); // 4 + 1
+  // switch to inhale
   setTimeout(() => {
     exhale.classList.toggle('hidden');
-    // Restart the animation cycle
-    animateCalm();
-  }, 10000);
+    inhale.classList.toggle('hidden');
+  }, 12000); // 5 + 7
+  // switch to exhale
+  setTimeout(() => {
+    inhale.classList.toggle('hidden');
+    exhale.classList.toggle('hidden');
+  }, 17000); // 12 + 5
+  //switch to inhale
+  setTimeout(() => {
+    exhale.classList.toggle('hidden');
+    inhale.classList.toggle('hidden');
+  }, 24000); // 17 + 7
+  // switch to exhale
+  setTimeout(() => {
+    inhale.classList.toggle('hidden');
+    exhale.classList.toggle('hidden');
+  }, 29000); // 24 + 5
+  // switch to inhale
+  setTimeout(() => {
+    exhale.classList.toggle('hidden');
+    inhale.classList.toggle('hidden');
+  }, 36000); // 29 + 7
+  // switch to exhale
+  setTimeout(() => {
+    inhale.classList.toggle('hidden');
+    exhale.classList.toggle('hidden');
+  }, 41000); // 36 + 5
+  // switch to inhale
+  setTimeout(() => {
+    exhale.classList.toggle('hidden');
+    inhale.classList.toggle('hidden');
+  }, 48000); // 41 + 7
+  // switch to exhale
+  setTimeout(() => {
+    inhale.classList.toggle('hidden');
+    exhale.classList.toggle('hidden');
+  }, 53000); // 48 + 5
+  // switch to inhale
+  setTimeout(() => {
+    exhale.classList.toggle('hidden');
+    inhale.classList.toggle('hidden');
+  }, 60000); // 53 + 7
+  setTimeout(() => {
+    inhale.classList.toggle('hidden');
+    circle.classList.toggle('hidden');
+    intro.classList.toggle('hidden');
+  }, 61000);
 }

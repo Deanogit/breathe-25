@@ -125,10 +125,24 @@ main {
   position: relative;
   border-radius: 50%;
   background-color: #fafafa;
-  opacity: 1;
-  /* transition: opacity 2s;
-  opacity: 0; */
+  /* opacity: 1; */
+  transition: opacity 2s;
+  opacity: 0;
 }
+/* .circle::before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  top: 60%;
+  left: 0;
+  background-color: #000;
+  transform: scaleX(1);
+  transition: transform 0.5s ease; 
+  animation: calmBar 12s infinite;
+} */
+
 /* Sections */
 
 section {
@@ -302,3 +316,52 @@ iteration-count | direction | fill-mode | play-state | name
   animation: begin 4s 1;
 }
 */
+
+.lets-begin {
+  transition: opacity 1s;
+  opacity: 0;
+  animation: fade-in-out 3s 1;
+}
+
+@keyframes fade-in-out {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes inhaleCalm {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  10%,
+  90% {
+    opacity: 1;
+  }
+}
+
+.inhale {
+  opacity: 0;
+  /* transition: opacity 1s; */
+  animation: inhaleCalm 5s;
+}
+
+.exhale {
+  opacity: 0;
+  /* transition opacity 1s; */
+  animation: inhaleCalm 7s;
+}
+
+@keyframes calmBar {
+    0%,
+    100% {
+        scaleX(0);
+    }
+    45% {
+        scaleX(1);
+    }
+}
