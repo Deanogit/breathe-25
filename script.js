@@ -496,71 +496,86 @@ function animateCalm() {
 
 //Write out the calm animation for 1 min from beginning to end
 function calmTime1() {
-  // start with inhale & circle
+  // hide calm
   calm.classList.toggle('hidden');
-  circle.classList.toggle('hidden');
-  circle.style.cssText = `
-  background-color: #fafafa;
-  height: 22rem;
-  width: 22rem;
-  border-radius: 50%;
-  box-shadow: 4px 4px 20px rgba(0,0,0,0.1);
-  opacity: 1;
-`;
-  inhale.classList.toggle('hidden');
+  // fade lets-begin in
+  letsBegin.classList.toggle('hidden');
+  // fade lets-begin out
+  setTimeout(() => {
+    letsBegin.classList.toggle('hidden');
+  }, 3000);
+  setTimeout(() => {
+    // start with inhale & circle
+    circle.classList.toggle('hidden');
+    circle.style.cssText = `
+        background-color: #fafafa;
+        height: 22rem;
+        width: 22rem;
+        border-radius: 50%;
+        box-shadow: 4px 4px 20px rgba(0,0,0,0.1);
+        opacity: 1;
+      `;
+  }, 3500);
+  setTimeout(() => {
+    inhale.classList.toggle('hidden');
+  }, 4000);
   // switch to exhale
   setTimeout(() => {
     inhale.classList.toggle('hidden');
     exhale.classList.toggle('hidden');
-  }, 5000); // 4 + 1
+  }, 9000); // 4 + 5
   // switch to inhale
   setTimeout(() => {
     exhale.classList.toggle('hidden');
     inhale.classList.toggle('hidden');
-  }, 12000); // 5 + 7
+  }, 16000); // 9 + 7
   // switch to exhale
   setTimeout(() => {
     inhale.classList.toggle('hidden');
     exhale.classList.toggle('hidden');
-  }, 17000); // 12 + 5
+  }, 21000); // 16 + 5
   //switch to inhale
   setTimeout(() => {
     exhale.classList.toggle('hidden');
     inhale.classList.toggle('hidden');
-  }, 24000); // 17 + 7
+  }, 28000); // 21 + 7
   // switch to exhale
   setTimeout(() => {
     inhale.classList.toggle('hidden');
     exhale.classList.toggle('hidden');
-  }, 29000); // 24 + 5
+  }, 33000); // 28 + 5
   // switch to inhale
   setTimeout(() => {
     exhale.classList.toggle('hidden');
     inhale.classList.toggle('hidden');
-  }, 36000); // 29 + 7
+  }, 40000); // 33 + 7
   // switch to exhale
   setTimeout(() => {
     inhale.classList.toggle('hidden');
     exhale.classList.toggle('hidden');
-  }, 41000); // 36 + 5
+  }, 45000); // 40 + 5
   // switch to inhale
   setTimeout(() => {
     exhale.classList.toggle('hidden');
     inhale.classList.toggle('hidden');
-  }, 48000); // 41 + 7
+  }, 52000); // 45 + 7
   // switch to exhale
   setTimeout(() => {
     inhale.classList.toggle('hidden');
     exhale.classList.toggle('hidden');
-  }, 53000); // 48 + 5
+  }, 57000); // 52 + 5
   // switch to inhale
   setTimeout(() => {
     exhale.classList.toggle('hidden');
     inhale.classList.toggle('hidden');
-  }, 60000); // 53 + 7
+  }, 64000); // 57 + 7
   setTimeout(() => {
     inhale.classList.toggle('hidden');
     circle.classList.toggle('hidden');
+    end.classList.toggle('hidden');
+  }, 65000);
+  setTimeout(() => {
+    end.classList.toggle('hidden');
     intro.classList.toggle('hidden');
-  }, 61000);
+  }, 68000);
 }

@@ -323,6 +323,12 @@ iteration-count | direction | fill-mode | play-state | name
   animation: fade-in-out 3s 1;
 }
 
+.end {
+  transition: opacity 2s;
+  opacity: 0;
+  animation: fade-in-out 4s 1;
+}
+
 @keyframes fade-in-out {
   0%,
   100% {
