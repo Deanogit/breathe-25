@@ -33,7 +33,7 @@ header {
 header h1 {
   font-weight: 100;
   letter-spacing: 0.16rem;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 header p {
@@ -382,10 +382,11 @@ iteration-count | direction | fill-mode | play-state | name
   display: block;
   top: 49%;
   left: 0;
-  height: 7px;
+  height: 5px;
   background-color: #333;
   transform: scaleX(0.1);
-  
+  /* box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1); */
+
   /*
     transition: transform 3s;  */
   animation: calmBarInhale 12s infinite;
@@ -402,6 +403,6 @@ iteration-count | direction | fill-mode | play-state | name
   background-color: #333;
   transform: scaleX(1);
   /*
-      transition: transform 3s;  */
+      transition: transform 3s;  
   animation: calmBarExhale 7s;
 } */
