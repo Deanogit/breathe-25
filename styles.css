@@ -412,3 +412,5 @@ iteration-count | direction | fill-mode | play-state | name
       transition: transform 3s;  
   animation: calmBarExhale 7s;
 } */
+
+// Work out the styles for circle, inhale, hold, exhale with position relative and absolute
