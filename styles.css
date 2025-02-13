@@ -353,13 +353,22 @@ iteration-count | direction | fill-mode | play-state | name
 .inhale {
   opacity: 0;
   /* transition: opacity 1s; */
-  animation: inhaleCalm 5s;
+  /* animation: inhaleCalm 5s; */
+  position: absolute;
 }
 
 .exhale {
   opacity: 0;
+  position: absolute;
   /* transition opacity 1s; */
-  animation: inhaleCalm 7s;
+  /* animation: inhaleCalm 7s; */
+}
+
+.hold1,
+.hold2 {
+    opacity: 0;
+  position: absolute;
+  top: 46%;
 }
 
 @keyframes calmBarInhale {
@@ -381,7 +390,7 @@ iteration-count | direction | fill-mode | play-state | name
   }
 } */
 
-.circle::before {
+/* .circle::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -390,7 +399,7 @@ iteration-count | direction | fill-mode | play-state | name
   left: 0;
   height: 5px;
   background-color: #333;
-  transform: scaleX(0.1);
+  transform: scaleX(0.1); */
   /* box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1); */
 
   /*
@@ -414,3 +423,7 @@ iteration-count | direction | fill-mode | play-state | name
 } */
 
 // Work out the styles for circle, inhale, hold, exhale with position relative and absolute
+
+@keyframes calmSequenceInhale {
+    0% 
+}
