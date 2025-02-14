@@ -76,7 +76,6 @@ function time(e) {
   // console.log(e.target.dataset.time); test
   store.time = e.target.dataset.time;
   console.log(store.time);
-
   // hide begin
   begin.classList.toggle('hidden');
   // show choose
@@ -97,50 +96,24 @@ chooseRelieve.addEventListener('click', choice);
 
 // set the choice
 function choice(e) {
-  // // Check its working by printing to the console
-  // // console.log('choice');
-  // // Check the e.target.id is correct
-  // // console.log(e.target.id);
   // hide the choice section
   choose.classList.toggle('hidden');
   //   // store which exercise is chosen
-  //   localStorage.setItem('type', e.target.id);
-  //   //check its stored correctly
-  //   console.log(localStorage.getItem('type'));
+  store.type = e.target.dataset.type;
+  // check its stored correctly
+  console.log(store.type);
 
-  // show the relevant exercise section
-  const exercise = e.target.id;
-  switch (exercise) {
-    case 'chooseCalm':
-      calm.classList.toggle('hidden');
-      localStorage.setItem('type', 'calm');
-      // animate(); // this here can be moved to the calmBtn
-      break;
-    case 'chooseClear':
-      clear.classList.toggle('hidden');
-      localStorage.setItem('type', 'clear');
-      // animate(); // move to clearBtn
-      break;
-    case 'chooseRelax':
-      relax.classList.toggle('hidden');
-      localStorage.setItem('type', 'relax');
-      // animate(); // move to relaxBtn
-      break;
-    case 'chooseRelieve':
-      relieve.classList.toggle('hidden');
-      localStorage.setItem('type', 'relieve');
-      // animate(); // move to relieveBtn
-      break;
-    default:
-      console.log('fault with choice');
-  }
+  // show relevant section
+  document.getElementById(store.type).classList.toggle('hidden');
 }
 
+// Now the relevant exercise description is showing, listen to the button to initiate the animation
+
 // calmBtn.addEventListener('click', animate);
-calmBtn.addEventListener('click', calmTime1);
-clearBtn.addEventListener('click', animate);
-relaxBtn.addEventListener('click', animate);
-relieveBtn.addEventListener('click', animate);
+// calmBtn.addEventListener('click', calmTime1);
+// clearBtn.addEventListener('click', animate);
+// relaxBtn.addEventListener('click', animate);
+// relieveBtn.addEventListener('click', animate);
 
 // Initiate the animation for exercise with duration
 function animate() {
