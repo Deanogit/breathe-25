@@ -54,17 +54,32 @@ beginBtn.addEventListener('click', function () {
 });
 
 // Store the time in localStorage
+// function time(e) {
+//   // when a time element is clicked
+//   // // check the console its working
+//   // // console.log(e.target.id);
+//   // set localStorage time
+//   localStorage.setItem('time', e.target.id);
+//   // // check the console its working
+//   // // console.log(localStorage.getItem('time'));
+//   // hide the begin section
+//   begin.classList.toggle('hidden');
+//   // show the choose section
+//   choose.classList.toggle('hidden');
+// }
+
+// Store the duration &
+const store = {};
+// Store the time
+
 function time(e) {
-  // when a time element is clicked
-  // // check the console its working
-  // // console.log(e.target.id);
-  // set localStorage time
-  localStorage.setItem('time', e.target.id);
-  // // check the console its working
-  // // console.log(localStorage.getItem('time'));
-  // hide the begin section
+  // console.log(e.target.dataset.time); test
+  store.time = e.target.dataset.time;
+  console.log(store.time);
+
+  // hide begin
   begin.classList.toggle('hidden');
-  // show the choose section
+  // show choose
   choose.classList.toggle('hidden');
 }
 
