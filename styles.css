@@ -113,36 +113,6 @@ main {
   background-color: #fafafa;
 } */
 
-/////////////////////////
-// Circle why does this not apply?
-.circle {
-  color: red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 20rem;
-  width: 20rem;
-  position: relative;
-  border-radius: 50%;
-  background-color: #fafafa;
-  /* opacity: 1; */
-  transition: opacity 2s;
-  opacity: 0;
-}
-/* .circle::before {
-  position: absolute;
-  content: '';
-  display: block;
-  width: 100%;
-  height: 2px;
-  top: 60%;
-  left: 0;
-  background-color: #000;
-  transform: scaleX(1);
-  transition: transform 0.5s ease;
-  animation: calmBar 12s infinite;
-} */
-
 /* Sections */
 
 section {
@@ -154,7 +124,7 @@ section {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  transition: opacity 3s;
+  /* transition: opacity 3s; */
 }
 
 .section-header {
@@ -208,112 +178,112 @@ footer a {
 /* Animation */
 /*
 main::before {
-  position: absolute;
-  content: '';
-  display: block;
-  width: 500px;
-  height: 500px;
-  transform: translateX(125px);
-
-  background-color: #fafafa;
-  left: 25%;
-  top: 25%;
-  border-radius: 50%;
+    position: absolute;
+    content: '';
+    display: block;
+    width: 500px;
+    height: 500px;
+    transform: translateX(125px);
+    
+    background-color: #fafafa;
+    left: 25%;
+    top: 25%;
+    border-radius: 50%;
 }
 
 .circle-calm-inhale,
 .circle-calm-exhale {
-  text-align: center;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  /* display: none; 
+    text-align: center;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    /* display: none; 
 }
 
 .circle-calm-inhale {
-  animation: inhale linear 10s infinite;
+    animation: inhale linear 10s infinite;
 }
 
 @keyframes inhale {
-  0% {
-    /opacity: 0;
-  }
-  35% {
-    opacity: 1;
-  }
-  45% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
+    0% {
+        /opacity: 0;
+    }
+    35% {
+        opacity: 1;
+    }
+    45% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 @keyframes exhale {
-  0% {
-    opacity: 0;
-  }
-  45% {
-    opacity: 0;
-  }
-  55% {
-    opacity: 1;
-  }
-  98 % {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+    0% {
+        opacity: 0;
+    }
+    45% {
+        opacity: 0;
+    }
+    55% {
+        opacity: 1;
+    }
+    98 % {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 .circle-calm-exhale {
-  animation: exhale linear 10s infinite;
+    animation: exhale linear 10s infinite;
 }
 
 @keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes disappear {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    display: none;
-  }
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
 }
 
 // This is not working, how do I initiate this with javascript?
 .disappear {
-  animation: disappear 3s 3s 1;
+    animation: disappear 3s 3s 1;
 }
 
- @keyframes duration | easing-function | delay |
+@keyframes duration | easing-function | delay |
 iteration-count | direction | fill-mode | play-state | name
 
 // make an animation for the begin to fade in & out
 @keyframes begin {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
+    0%,
+    100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
 }
 
 .begin {
-  animation: begin 4s 1;
+    animation: begin 4s 1;
 }
 */
 
@@ -463,14 +433,14 @@ iteration-count | direction | fill-mode | play-state | name
 }
 
 /* @keyframes inhaleCalm {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  10%,
-  90% {
-    opacity: 1;
-  }
+    0%,
+    100% {
+        opacity: 0;
+    }
+    10%,
+    90% {
+        opacity: 1;
+    }
 } */
 
 .inhale {
@@ -504,7 +474,7 @@ iteration-count | direction | fill-mode | play-state | name
   animation: sequenceRelieveHold 16s infinite;
 }
 
-@keyframes calmBarInhale {
+@keyframes calmBar {
   0%,
   100% {
     transform: scaleX(0);
@@ -556,7 +526,7 @@ iteration-count | direction | fill-mode | play-state | name
     }
 } */
 
-.circle::before {
+/* .circle::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -565,13 +535,13 @@ iteration-count | direction | fill-mode | play-state | name
   left: 0;
   height: 5px;
   background-color: #333;
-  transform: scaleX(0.1);
+  transform: scaleX(0.1); */
   /* box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1); */
 
-  /* animation: calmBarInhale 10s infinite; */
+  /* animation: calmBar 10s infinite; */
   /* animation: clearBar 8s infinite; */
   /* animation: relaxBar 19s infinite; */
-  animation: relieveBar 16s infinite;
+  /* animation: relieveBar 16s infinite; */
   /*
     transition: transform 3s;  */
 }
@@ -592,3 +562,33 @@ iteration-count | direction | fill-mode | play-state | name
 } */
 
 // Work out the styles for circle, inhale, hold, exhale with position relative and absolute
+
+/////////////////////////
+// Circle why does this not apply?
+.circle {
+  /* color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20rem;
+  width: 20rem;
+  position: relative;
+  border-radius: 50%;
+  background-color: red !important;
+  /* opacity: 1; */
+  /* transition: opacity 2s; 
+  opacity: 0; */
+}
+/* .circle::before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  top: 60%;
+  left: 0;
+  background-color: #000;
+  transform: scaleX(1);
+  transition: transform 0.5s ease;
+  animation: calmBar 12s infinite;
+} */
