@@ -98,6 +98,18 @@ nav ul li a:hover::before {
   animation: fade-in 2s;
 }
 
+.bar {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    display: block;
+    top: 49%;
+    left: 0;
+    background-color: #333;
+    transform: scaleX(0.1);
+    /* opacity: 0; */
+  }
+
 .hidden {
   display: none;
 }
@@ -328,7 +340,7 @@ iteration-count | direction | fill-mode | play-state | name */
   }
 }
 
-@keyframes sequenceCalmInhale {
+@keyframes calmInhale {
   0% {
     opacity: 0;
   }
@@ -342,7 +354,7 @@ iteration-count | direction | fill-mode | play-state | name */
   }
 }
 
-@keyframes sequenceCalmExhale {
+@keyframes calmExhale {
   0%,
   40%,
   100% {
@@ -354,7 +366,7 @@ iteration-count | direction | fill-mode | play-state | name */
   }
 }
 
-@keyframes sequenceClearInhale {
+@keyframes clearInhale {
   0%,
   50% {
     opacity: 0;
@@ -364,7 +376,7 @@ iteration-count | direction | fill-mode | play-state | name */
     opacity: 1;
   }
 }
-@keyframes sequenceClearExhale {
+@keyframes clearExhale {
   0%,
   50% {
     opacity: 0;
@@ -375,7 +387,7 @@ iteration-count | direction | fill-mode | play-state | name */
   }
 }
 
-@keyframes sequenceRelaxInhale {
+@keyframes relaxInhale {
   0%,
   21% {
     opacity: 0;
@@ -386,7 +398,7 @@ iteration-count | direction | fill-mode | play-state | name */
   }
 }
 
-@keyframes sequenceRelaxHold {
+@keyframes relaxHold {
   0%,
   21%,
   56%,
@@ -399,7 +411,7 @@ iteration-count | direction | fill-mode | play-state | name */
   }
 }
 
-@keyframes sequenceRelaxExhale {
+@keyframes relaxExhale {
   0%,
   56%,
   100% {
@@ -411,7 +423,7 @@ iteration-count | direction | fill-mode | play-state | name */
   }
 }
 
-@keyframes sequenceRelieveInhale {
+@keyframes relieveInhale {
   0%,
   25%,
   100% {
@@ -423,7 +435,7 @@ iteration-count | direction | fill-mode | play-state | name */
   }
 }
 
-@keyframes sequenceRelieveHold {
+@keyframes relieveHold {
   0%,
   25%,
   50%,
@@ -438,7 +450,7 @@ iteration-count | direction | fill-mode | play-state | name */
   }
 }
 
-@keyframes sequenceRelieveExhale {
+@keyframes relieveExhale {
   0%,
   50%,
   75%,
@@ -554,8 +566,8 @@ iteration-count | direction | fill-mode | play-state | name */
   left: 0;
   height: 5px;
   background-color: #333;
-  transform: scaleX(0.1); */
-/* box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1); */
+  transform: scaleX(0.1);
+  /* box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1); */
 
 /* animation: calmBar 10s infinite; */
 /* animation: clearBar 8s infinite; */
@@ -564,6 +576,18 @@ iteration-count | direction | fill-mode | play-state | name */
 /*
     transition: transform 3s;  */
 /* } */
+
+/* .bar {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  display: block;
+  top: 49%;
+  left: 0;
+  background-color: #333;
+  transform: scaleX(0.1);
+  /* opacity: 0; */
+} */
 
 /* .circle::after {
     content: '';

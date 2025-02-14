@@ -37,7 +37,8 @@ const letsBegin = document.getElementById('lets-begin');
 // grab the circle section
 const circle = document.getElementById('circle');
 
-// grab the inhale, hold & exhale divs
+// grab the bar, inhale, hold & exhale divs
+const bar = document.getElementById('bar');
 const inhale = document.getElementById('inhale');
 const hold1 = document.getElementById('hold1');
 const exhale = document.getElementById('exhale');
@@ -126,18 +127,79 @@ function animate() {
   setTimeout(() => {
     letsBegin.classList.toggle('hidden');
     circle.classList.toggle('hidden');
-    // inhale.classList.toggle('hidden');
-    // exhale.classList.toggle('hidden');
-    // hold1.classList.toggle('hidden');
-    // circle.style.cssText = `
-    //          background-color: #fafafa;
-    //          height: 22rem;
-    //          width: 22rem;
-    //          border-radius: 50%;
-    //          box-shadow: 4px 4px 20px rgba(0,0,0,0.1);
-    //          transition: opacity 1s;
-    //        `;
   }, 3000);
+
+  // so now the lets begin message runs in and out
+  // the circle appears
+  // now initiate the animation sequence relevant to the type
+
+  setTimeout(() => {
+    // remove hidden
+    bar.classList.toggle('hidden');
+    inhale.classList.toggle('hidden');
+    exhale.classList.toggle('hidden');
+    hold1.classList.toggle('hidden');
+
+    // use a switch statement to define which animation get applied
+    switch (store.type) {
+      case 'calm':
+        inhale.style.cssText = `
+            animation: calmInhale 10s infinite`;
+        exhale.style.cssText = `
+            animation: calmExhale 10s infinite`;
+        bar.style.cssText = `
+            animation: calmBar 10s infinite`;
+        break;
+      case 'clear':
+        inhale.style.cssText = `
+                animation: clearInhale 8s infinite`;
+        exhale.style.cssText = `
+                animation: clearExhale 8s infinite`;
+        bar.style.cssText = `
+                animation: clearBar 8s infinite;
+                `;
+        break;
+      case 'relax':
+        inhale.style.cssText = `
+                    animation: relaxInhale 19s infinite`;
+        exhale.style.cssText = `
+                    animation: relaxExhale 19s infinite`;
+        hold1.style.cssText = `
+                    animation: relaxHold 19s infinite`;
+        bar.style.cssText = `
+                    animation: relaxBar 19s infinite;
+                    
+                    `;
+        break;
+      case 'relieve':
+        inhale.style.cssText = `
+                        animation: relieveInhale 16s infinite`;
+        exhale.style.cssText = `
+                        animation: relieveExhale 16s infinite`;
+        hold1.style.cssText = `
+                        animation: relieveHold 16s infinite`;
+        bar.style.cssText = `
+                        animation: relieveBar 16s infinite;  
+                        `;
+        break;
+      default:
+        console.log('broken');
+    }
+
+    //     // function animater() {
+    //     //   return `${store.type}Animate`;
+    //     // }
+    //     // return animater();
+    //     // inhale.classList.toggle('hidden');
+    //     // inhale.style.cssText = `
+    //     // animation: ${store.type}Inhale 10s infinite`;
+    //     // exhale.classList.toggle('hidden');
+    //     // exhale.style.cssText = `
+    //     // animation: ${store.type}Exhale 10s infinite`;
+    //     // hold1.classList.toggle('hidden');
+  }, 3500);
+
+  // meanwhile
 
   // grab the time stored in localStorage
   //   const time = localStorage.getItem('time');
@@ -589,3 +651,24 @@ function calmTime1() {
     intro.classList.toggle('hidden');
   }, 68000);
 }
+
+// specific functions for animation sequences
+// function calmAnimate() {
+//   // check time
+//   if (store.time) {
+//     // store time in duration & change to milliseconds
+//     const duration = store.time * 1000;
+//     // check duration
+//     console.log(duration);
+//   }
+// }
+
+// function geeks_inner(value) {
+//   return 'Hello User!';
+// }
+
+// function geeks_outer(func) {
+//   console.log(geeks_inner());
+// }
+
+// geeks_outer(geeks_inner);
