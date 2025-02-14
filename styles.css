@@ -23,7 +23,7 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* justify-content: space-between; */ // if nav
+  /* justify-content: space-between;  if nav */
   padding: 20px;
   max-width: 90%;
   margin: 0 auto;
@@ -85,6 +85,17 @@ nav ul li a:active {
 
 nav ul li a:hover::before {
   transform: scaleX(1);
+}
+
+/* circle class was not applying because it was after hidden class... */
+.circle {
+  background-color: #fafafa;
+  display: flex;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+  animation: fade-in 2s;
 }
 
 .hidden {
@@ -263,29 +274,28 @@ main::before {
     }
 }
 
-// This is not working, how do I initiate this with javascript?
+ /* This is not working, how do I initiate this with javascript? */
 .disappear {
-    animation: disappear 3s 3s 1;
+  animation: disappear 3s 3s 1;
 }
 
-@keyframes duration | easing-function | delay |
-iteration-count | direction | fill-mode | play-state | name
+/* @keyframes duration | easing-function | delay |
+iteration-count | direction | fill-mode | play-state | name */
 
-// make an animation for the begin to fade in & out
-@keyframes begin {
-    0%,
-    100% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-}
+/* make an animation for the begin to fade in & out */
+/* @keyframes begin {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+} */
 
-.begin {
-    animation: begin 4s 1;
-}
-*/
+/* .begin {
+  animation: begin 4s 1;
+} */
 
 .lets-begin {
   transition: opacity 1s;
@@ -305,6 +315,15 @@ iteration-count | direction | fill-mode | play-state | name
     opacity: 0;
   }
   50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
   }
 }
@@ -452,7 +471,7 @@ iteration-count | direction | fill-mode | play-state | name
   /* animation: sequenceCalmInhale 10s infinite; */
   /* animation: sequenceClearInhale 8s infinite; */
   /* animation: sequenceRelaxInhale 19s infinite; */
-  animation: sequenceRelieveInhale 16s infinite;
+  /* animation: sequenceRelieveInhale 16s infinite; */
 }
 
 .exhale {
@@ -463,7 +482,7 @@ iteration-count | direction | fill-mode | play-state | name
   /* transition opacity 1s; */
   /* animation: inhaleCalm 7s; */
   /* animation: sequenceRelaxExhale 19s infinite; */
-  animation: sequenceRelieveExhale 16s infinite;
+  /* animation: sequenceRelieveExhale 16s infinite; */
 }
 
 .hold1 {
@@ -471,7 +490,7 @@ iteration-count | direction | fill-mode | play-state | name
   position: absolute;
   top: 46%;
   /* animation: sequenceRelaxHold 19s infinite; */
-  animation: sequenceRelieveHold 16s infinite;
+  /* animation: sequenceRelieveHold 16s infinite; */
 }
 
 @keyframes calmBar {
@@ -536,15 +555,15 @@ iteration-count | direction | fill-mode | play-state | name
   height: 5px;
   background-color: #333;
   transform: scaleX(0.1); */
-  /* box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1); */
+/* box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1); */
 
-  /* animation: calmBar 10s infinite; */
-  /* animation: clearBar 8s infinite; */
-  /* animation: relaxBar 19s infinite; */
-  /* animation: relieveBar 16s infinite; */
-  /*
+/* animation: calmBar 10s infinite; */
+/* animation: clearBar 8s infinite; */
+/* animation: relaxBar 19s infinite; */
+/* animation: relieveBar 16s infinite; */
+/*
     transition: transform 3s;  */
-}
+/* } */
 
 /* .circle::after {
     content: '';
@@ -561,24 +580,23 @@ iteration-count | direction | fill-mode | play-state | name
     animation: calmBarExhale 7s;
 } */
 
-// Work out the styles for circle, inhale, hold, exhale with position relative and absolute
+/* Work out the styles for circle, inhale, hold, exhale with position relative and absolute */
 
-/////////////////////////
-// Circle why does this not apply?
-.circle {
+/* Circle why does this not apply? */
+/* #circle {
   /* color: red; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 20rem;
-  width: 20rem;
-  position: relative;
-  border-radius: 50%;
-  background-color: red !important;
-  /* opacity: 1; */
-  /* transition: opacity 2s; 
+/* display: flex;
+justify-content: center;
+align-items: center;
+height: 20rem;
+width: 20rem;
+position: relative;
+border-radius: 50%;
+background-color: red !important; */
+/* opacity: 1; */
+/* transition: opacity 2s; 
   opacity: 0; */
-}
+/* } */
 /* .circle::before {
   position: absolute;
   content: '';
