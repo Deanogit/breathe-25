@@ -99,23 +99,23 @@ nav ul li a:hover::before {
 }
 
 .bar {
-    position: absolute;
-    width: 100%;
-    height: 5px;
-    display: block;
-    top: 49%;
-    left: 0;
-    background-color: #333;
-    transform: scaleX(0.1);
-    /* opacity: 0; */
-  }
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  display: block;
+  top: 49%;
+  left: 0;
+  background-color: #333;
+  transform: scaleX(0.1);
+  /* opacity: 0; */
+}
 
-  .timer-countdown {
-    position: absolute;
-    top: 90%;
-    left: 80%;
-    animation: fade-in 3s;
-  }
+.timer-countdown {
+  position: absolute;
+  top: 90%;
+  left: 80%;
+  animation: fade-in 3s;
+}
 
 .hidden {
   display: none;
@@ -146,7 +146,6 @@ main {
 /* Sections */
 
 section {
-    
   max-width: 80%;
   padding: 30px;
   margin: 0 auto;
@@ -202,6 +201,31 @@ footer a {
   text-decoration: none;
   color: #0a0a0b;
 }
+
+/*  begin-btn */
+.begin-btn {
+  width: 8rem;
+  height: 8rem;
+  background-color: #fafafa;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
+  font-size: 1.4rem;
+}
+
+.begin-btn:hover,
+.begin-btn:active {
+  background-color: #333;
+  color: #fafafa;
+}
+
+/* .time-btn {
+  width: 6rem;
+  hieght: 6rem;
+  background-color: #fafafa;
+  border-radius: 50%;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
+} */
 
 /*
 /* Calm Down */
@@ -330,9 +354,9 @@ iteration-count | direction | fill-mode | play-state | name */
 }
 
 .intro {
-    /* transition: opacity 3s; */
-    opacity: 0;
-    animation: fade-in 5s 2s forwards;
+  /* transition: opacity 3s; */
+  opacity: 0;
+  animation: fade-in 5s 2s forwards;
 }
 
 @keyframes fade-in-out {
@@ -520,17 +544,15 @@ iteration-count | direction | fill-mode | play-state | name */
 }
 
 .timer-countdown {
-    color: #fafafa;
-    height: 4rem;
-    width: 4rem;
-    background-color: rgba(0,0,0,0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 4px 4px 20px rgba(0,0,0,0.1;)
-
-
+  color: #fafafa;
+  height: 4rem;
+  width: 4rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1;);
 }
 
 @keyframes calmBar {
@@ -615,7 +637,7 @@ iteration-count | direction | fill-mode | play-state | name */
   background-color: #333;
   transform: scaleX(0.1);
   /* opacity: 0; */
-} */
+/* } */
 
 /* .circle::after {
     content: '';
