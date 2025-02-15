@@ -119,6 +119,7 @@ relieveBtn.addEventListener('click', animate);
 // Initiate the animation for exercise with duration
 function animate() {
   let duration = store.time * 1000;
+  console.log(duration);
   // hide the relevant section
   document.getElementById(store.type).classList.toggle('hidden');
 
@@ -186,6 +187,18 @@ function animate() {
       default:
         console.log('broken');
     }
+
+    let durationCounter = setInterval(() => {
+      duration = duration - 1000;
+      console.log(duration);
+      if (duration <= 0) {
+        clearInterval(durationCounter);
+        console.log('HEEEllooo');
+        bar.classList.toggle('hidden');
+        circle.classList.toggle('hidden');
+        intro.classList.toggle('hidden');
+      }
+    }, 1000);
 
     //     // function animater() {
     //     //   return `${store.type}Animate`;
@@ -706,3 +719,20 @@ function calmTime1() {
 // }
 
 // geeks_outer(geeks_inner);
+
+//////////// UTILITY FUNCTIONS
+// utility function to show
+function rig(id) {
+  if (id.classList.contains('hidden')) {
+    console.log('rig');
+    id.classList.remove('hidden');
+  }
+}
+
+// utility function to hide
+function derig(id) {
+  if (!id.classList.contains('hidden')) {
+    console.log('derig');
+    id.classList.add('hidden');
+  }
+}
