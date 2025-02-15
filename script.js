@@ -50,8 +50,8 @@ const timerCountdown = document.getElementById('timer-countdown');
 
 // when the intro beginBtn is clicked, hide the intro and show the begin section
 beginBtn.addEventListener('click', function () {
-  intro.classList.toggle('hidden');
-  begin.classList.toggle('hidden');
+  hide(intro);
+  show(begin);
 });
 
 // Store the time in localStorage
@@ -78,9 +78,9 @@ function time(e) {
   store.time = e.target.dataset.time;
   console.log(store.time);
   // hide begin
-  begin.classList.toggle('hidden');
+  hide(begin);
   // show choose
-  choose.classList.toggle('hidden');
+  show(choose);
 }
 
 // set the time function to be called when a time is chosen
@@ -98,14 +98,15 @@ chooseRelieve.addEventListener('click', choice);
 // set the choice
 function choice(e) {
   // hide the choice section
-  choose.classList.toggle('hidden');
+  hide(choose);
   //   // store which exercise is chosen
   store.type = e.target.dataset.type;
   // check its stored correctly
   console.log(store.type);
 
   // show relevant section
-  document.getElementById(store.type).classList.toggle('hidden');
+  show(document.getElementById(store.type));
+  //document.getElementById(store.type).classList.toggle('hidden');
 }
 
 // Now the relevant exercise description is showing, listen to the button to initiate the animation
@@ -121,14 +122,20 @@ function animate() {
   let duration = store.time * 1000;
   console.log(duration);
   // hide the relevant section
-  document.getElementById(store.type).classList.toggle('hidden');
+  hide(document.getElementById(store.type));
+  // document.getElementById(store.type).classList.toggle('hidden');
 
   // show lets-begin
-  letsBegin.classList.toggle('hidden');
+  show(letsBegin);
+  // letsBegin.classList.toggle('hidden');
   // hide lets-begin & show circle
   setTimeout(() => {
-    letsBegin.classList.toggle('hidden');
-    circle.classList.toggle('hidden');
+    // hide letsBegin
+    hide(letsBegin);
+    // letsBegin.classList.toggle('hidden');
+    // show circle
+    show(circle);
+    // circle.classList.toggle('hidden');
   }, 3000);
 
   // so now the lets begin message runs in and out
@@ -136,11 +143,15 @@ function animate() {
   // now initiate the animation sequence relevant to the type
 
   setTimeout(() => {
-    // remove hidden
-    bar.classList.toggle('hidden');
-    inhale.classList.toggle('hidden');
-    exhale.classList.toggle('hidden');
-    hold1.classList.toggle('hidden');
+    // show
+    show(bar);
+    show(inhale);
+    show(exhale);
+    show(hold1);
+    // bar.classList.toggle('hidden');
+    // inhale.classList.toggle('hidden');
+    // exhale.classList.toggle('hidden');
+    // hold1.classList.toggle('hidden');
 
     // use a switch statement to define which animation get applied
     switch (store.type) {
@@ -191,12 +202,28 @@ function animate() {
     let durationCounter = setInterval(() => {
       duration = duration - 1000;
       console.log(duration);
+      let minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((duration % (1000 * 60)) / 1000);
+      if (seconds > 10) {
+        `0${seconds}`;
+      }
+      // timerCountdown.textContent = `${Math.floor(
+      //     (duration % (1000 * 60 * 60)) / (1000 * 60)
+      //   )}: ${Math.floor((duration % (1000 * 60)) / 1000)}`;
+      timerCountdown.textContent = `${minutes}:${seconds}`;
       if (duration <= 0) {
+        // stop the counter
         clearInterval(durationCounter);
         console.log('HEEEllooo');
-        bar.classList.toggle('hidden');
-        circle.classList.toggle('hidden');
-        intro.classList.toggle('hidden');
+        // hide
+        hide(bar);
+        hide(inhale);
+        hide(exhale);
+        hide(hold1);
+        hide(circle);
+        // show
+        show(end);
+        show(intro);
       }
     }, 1000);
 
@@ -722,17 +749,17 @@ function calmTime1() {
 
 //////////// UTILITY FUNCTIONS
 // utility function to show
-function rig(id) {
+function show(id) {
   if (id.classList.contains('hidden')) {
-    console.log('rig');
+    console.log('show');
     id.classList.remove('hidden');
   }
 }
 
 // utility function to hide
-function derig(id) {
+function hide(id) {
   if (!id.classList.contains('hidden')) {
-    console.log('derig');
+    console.log('hide');
     id.classList.add('hidden');
   }
 }

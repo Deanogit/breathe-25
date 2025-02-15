@@ -328,6 +328,12 @@ iteration-count | direction | fill-mode | play-state | name */
   animation: fade-in-out 4s 1;
 }
 
+.intro {
+    /* transition: opacity 3s; */
+    opacity: 0;
+    animation: fade-in 5s 2s forwards;
+}
+
 @keyframes fade-in-out {
   0%,
   100% {
@@ -510,6 +516,20 @@ iteration-count | direction | fill-mode | play-state | name */
   top: 46%;
   /* animation: sequenceRelaxHold 19s infinite; */
   /* animation: sequenceRelieveHold 16s infinite; */
+}
+
+.timer-countdown {
+    color: #fafafa;
+    height: 4rem;
+    width: 4rem;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 4px 4px 20px rgba(0,0,0,0.1;)
+
+
 }
 
 @keyframes calmBar {
