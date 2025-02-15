@@ -118,6 +118,7 @@ relieveBtn.addEventListener('click', animate);
 
 // Initiate the animation for exercise with duration
 function animate() {
+  let duration = store.time * 1000;
   // hide the relevant section
   document.getElementById(store.type).classList.toggle('hidden');
 
@@ -198,161 +199,194 @@ function animate() {
     //     // animation: ${store.type}Exhale 10s infinite`;
     //     // hold1.classList.toggle('hidden');
   }, 3500);
-
-  // meanwhile
-
-  // grab the time stored in localStorage
-  //   const time = localStorage.getItem('time');
-  //   console.log(time);
-  //   document
-  //     .getElementById(localStorage.getItem('type'))
-  //     .classList.toggle('hidden');
-  // console.log(e.target.id); // uncaught referenceError
-  // grab the
-
-  // show lets-begin & circle
-  //   letsBegin.classList.toggle('hidden');
-  //   setTimeout(() => {
-  //     letsBegin.classList.toggle('hidden');
-  //     circle.classList.toggle('hidden');
-  //     console.log(getComputedStyle(document.getElementById('circle')).display);
-  //     console.log(
-  //       getComputedStyle(document.getElementById('circle')).backgroundColor
-  //     );
-  //     console.log(document.querySelector('#circle'));
-  //     document.addEventListener('DOMContentLoaded', function () {
-  //       document.getElementById('circle').style.backgroundColor = '#fafafa';
-  //     });
-  //     document.getElementById('circle').style.backgroundColor = '#fafafa';
-  //     document.getElementById('circle').style.height = '22rem';
-  //     document.getElementById('circle').style.width = '22rem';
-  //     document.getElementById('circle').style.borderRadius = '50%';
-  //     document.getElementById('circle').style.boxShadow =
-  //       '4px 4px 20px rgba(0,0,0,0.1';
-  //   }, 3000);
-
-  // grab the type of exercise, this isnt relevant atm
-  // const type = localStorage.getItem('exercise');
-  //console.log('here we go');
-  //console.log(time, type);
-
-  // define the duration of practice
-  //   let duration = 0;
-  //   switch (time) {
-  //     case 'time1':
-  //       duration = 60000;
-  //       console.log(duration);
-  //       break;
-  //     case 'time2':
-  //       duration = 120000;
-  //       break;
-  //     case 'time3':
-  //       duration = 180000;
-  //       break;
-  //     case 'time5':
-  //       duration = 300000;
-  //       break;
-  //     case 'time10':
-  //       duration = 600000;
-  //       break;
-  //     default:
-  //       console.log('not working!');
-  //   }
-  // console.log(duration);
-
-  // Practice making a countdown timer
-
-  // let finish = new Date().getTime();
-  //console.log(finish); // returns 13 digit timestamp
-
-  //   setTimeout(() => {
-  //     // Update countdown every 1000 miliseconds
-  //     let x = setInterval(function () {
-  //       if (duration > 0) {
-  //         duration -= 1000;
-  //         console.log(duration);
-  //         timerCountdown.textContent = duration / 1000;
-  //       }
-  //       // let now = new Date().getTime();
-  //       // let distance = duration + now;
-  //       // let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  //       // let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  //       // console.log(minutes, seconds);
-  //       else if (duration <= 0) {
-  //         clearInterval(x);
-  //         // hide the animation
-  //         //   document
-  //         //     .getElementById(localStorage.getItem('type'))
-  //         //     .classList.toggle('hidden');
-  //         circle.classList.toggle('hidden');
-  //         intro.classList.toggle('hidden');
-  //         localStorage.clear();
-  //         // reset duration
-  //         // duration = 0; // this doesnt seem to be working... ?
-  //       }
-  //     }, 1000);
-  //   }, 3000);
-
-  //// chat GPT solution 1
-
-  // Start countdown after "Let's Begin" animation
-  //   setTimeout(() => {
-  //     // Immediately update timer display before countdown starts
-  //     timerCountdown.textContent = duration / 1000; // this stops the timer from the previous iteration being rendered
-  //     // call the  animate function
-  //     animateCalm();
-
-  //     //
-  //     let x = setInterval(function () {
-  //       if (duration > 0) {
-  //         duration -= 1000;
-  //         console.log(duration);
-  //         timerCountdown.textContent = duration / 1000; // Update display
-  //       } else {
-  //         clearInterval(x);
-  //         circle.classList.toggle('hidden');
-
-  //         intro.classList.toggle('hidden');
-  //         localStorage.clear();
-  //         clearInterval(calmInterval);
-  //       }
-  //     }, 1000);
-  //   }, 3000);
-
-  ///// chat GPT solution #2
-  //   let countdownInterval; // Store interval globally
-
-  //   setTimeout(() => {
-  //     clearInterval(countdownInterval); // Stop any previous countdown
-
-  //     timerCountdown.textContent = duration / 1000;
-
-  //     countdownInterval = setInterval(function () {
-  //       if (duration > 0) {
-  //         duration -= 1000;
-  //         timerCountdown.textContent = duration / 1000;
-  //       } else {
-  //         clearInterval(countdownInterval);
-  //         circle.classList.toggle('hidden');
-  //         intro.classList.toggle('hidden');
-  //         localStorage.clear();
-  //       }
-  //     }, 1000);
-  //   }, 3000);
-
-  // console.log(duration);
-
-  // define the type of practice
-
-  //   let practice;
-  //   switch (type) {
-  //     case 'chooseCalm':
-  //       chooseCalm.classList.toggle('hidden');
-  //       break;
-  //     default:
-  //       console.log('broken');
-  //   }
 }
+
+// Brief: use the duration to countdown to zero, when zero, hide animation sequence, show complete message, hide complete message and return to start screen
+
+// if duration is less than or equal to zero
+// if (duration <= 0) {
+// hide the circle section
+// show the end message
+// return to intro section
+// } else {
+//
+
+//}
+
+// meanwhile if duration
+//   setTimeout(() => {
+//     duration * 1000;
+//     while (duration >= 0) {
+//       setInterval(() => {
+//         duration -= 1000;
+//         let minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
+//         let seconds = Math.floor((duration % (1000 * 60)) / 1000);
+//         timerCountdown.textContent = `${minutes}:${seconds}`;
+//       }, 1000);
+//     }
+// bar.classList.toggle('hidden');
+// inhale.classList.toggle('hidden');
+// exhale.classList.toggle('hidden');
+// hold1.classList.toggle('hidden');
+// circle.classList.toggle('hidden');
+// intro.classList.toggle('hidden');
+// store = {};
+//   }, 3500);
+
+//   if (duration <= 0) {
+//   }
+
+// grab the time stored in localStorage
+//   const time = localStorage.getItem('time');
+//   console.log(time);
+//   document
+//     .getElementById(localStorage.getItem('type'))
+//     .classList.toggle('hidden');
+// console.log(e.target.id); // uncaught referenceError
+// grab the
+
+// show lets-begin & circle
+//   letsBegin.classList.toggle('hidden');
+//   setTimeout(() => {
+//     letsBegin.classList.toggle('hidden');
+//     circle.classList.toggle('hidden');
+//     console.log(getComputedStyle(document.getElementById('circle')).display);
+//     console.log(
+//       getComputedStyle(document.getElementById('circle')).backgroundColor
+//     );
+//     console.log(document.querySelector('#circle'));
+//     document.addEventListener('DOMContentLoaded', function () {
+//       document.getElementById('circle').style.backgroundColor = '#fafafa';
+//     });
+//     document.getElementById('circle').style.backgroundColor = '#fafafa';
+//     document.getElementById('circle').style.height = '22rem';
+//     document.getElementById('circle').style.width = '22rem';
+//     document.getElementById('circle').style.borderRadius = '50%';
+//     document.getElementById('circle').style.boxShadow =
+//       '4px 4px 20px rgba(0,0,0,0.1';
+//   }, 3000);
+
+// grab the type of exercise, this isnt relevant atm
+// const type = localStorage.getItem('exercise');
+//console.log('here we go');
+//console.log(time, type);
+
+// define the duration of practice
+//   let duration = 0;
+//   switch (time) {
+//     case 'time1':
+//       duration = 60000;
+//       console.log(duration);
+//       break;
+//     case 'time2':
+//       duration = 120000;
+//       break;
+//     case 'time3':
+//       duration = 180000;
+//       break;
+//     case 'time5':
+//       duration = 300000;
+//       break;
+//     case 'time10':
+//       duration = 600000;
+//       break;
+//     default:
+//       console.log('not working!');
+//   }
+// console.log(duration);
+
+// Practice making a countdown timer
+
+// let finish = new Date().getTime();
+//console.log(finish); // returns 13 digit timestamp
+
+//   setTimeout(() => {
+//     // Update countdown every 1000 miliseconds
+//     let x = setInterval(function () {
+//       if (duration > 0) {
+//         duration -= 1000;
+//         console.log(duration);
+//         timerCountdown.textContent = duration / 1000;
+//       }
+//       // let now = new Date().getTime();
+//       // let distance = duration + now;
+//       // let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+//       // let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+//       // console.log(minutes, seconds);
+//       else if (duration <= 0) {
+//         clearInterval(x);
+//         // hide the animation
+//         //   document
+//         //     .getElementById(localStorage.getItem('type'))
+//         //     .classList.toggle('hidden');
+//         circle.classList.toggle('hidden');
+//         intro.classList.toggle('hidden');
+//         localStorage.clear();
+//         // reset duration
+//         // duration = 0; // this doesnt seem to be working... ?
+//       }
+//     }, 1000);
+//   }, 3000);
+
+//// chat GPT solution 1
+
+// Start countdown after "Let's Begin" animation
+//   setTimeout(() => {
+//     // Immediately update timer display before countdown starts
+//     timerCountdown.textContent = duration / 1000; // this stops the timer from the previous iteration being rendered
+//     // call the  animate function
+//     animateCalm();
+
+//     //
+//     let x = setInterval(function () {
+//       if (duration > 0) {
+//         duration -= 1000;
+//         console.log(duration);
+//         timerCountdown.textContent = duration / 1000; // Update display
+//       } else {
+//         clearInterval(x);
+//         circle.classList.toggle('hidden');
+
+//         intro.classList.toggle('hidden');
+//         localStorage.clear();
+//         clearInterval(calmInterval);
+//       }
+//     }, 1000);
+//   }, 3000);
+
+///// chat GPT solution #2
+//   let countdownInterval; // Store interval globally
+
+//   setTimeout(() => {
+//     clearInterval(countdownInterval); // Stop any previous countdown
+
+//     timerCountdown.textContent = duration / 1000;
+
+//     countdownInterval = setInterval(function () {
+//       if (duration > 0) {
+//         duration -= 1000;
+//         timerCountdown.textContent = duration / 1000;
+//       } else {
+//         clearInterval(countdownInterval);
+//         circle.classList.toggle('hidden');
+//         intro.classList.toggle('hidden');
+//         localStorage.clear();
+//       }
+//     }, 1000);
+//   }, 3000);
+
+// console.log(duration);
+
+// define the type of practice
+
+//   let practice;
+//   switch (type) {
+//     case 'chooseCalm':
+//       chooseCalm.classList.toggle('hidden');
+//       break;
+//     default:
+//       console.log('broken');
+//   }
 
 // ////////////////////
 // // Chatgpt animate version

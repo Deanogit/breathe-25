@@ -110,6 +110,13 @@ nav ul li a:hover::before {
     /* opacity: 0; */
   }
 
+  .timer-countdown {
+    position: absolute;
+    top: 90%;
+    left: 80%;
+    animation: fade-in 3s;
+  }
+
 .hidden {
   display: none;
 }
