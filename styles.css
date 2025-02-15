@@ -146,6 +146,7 @@ main {
 /* Sections */
 
 section {
+    
   max-width: 80%;
   padding: 30px;
   margin: 0 auto;
@@ -513,7 +514,7 @@ iteration-count | direction | fill-mode | play-state | name */
 .hold1 {
   opacity: 0;
   position: absolute;
-  top: 46%;
+  top: 45%;
   /* animation: sequenceRelaxHold 19s infinite; */
   /* animation: sequenceRelieveHold 16s infinite; */
 }
@@ -538,7 +539,7 @@ iteration-count | direction | fill-mode | play-state | name */
     transform: scaleX(0);
   }
   40% {
-    transform: scaleX(1);
+    transform: scaleX(0.75);
   }
 }
 
@@ -548,7 +549,7 @@ iteration-count | direction | fill-mode | play-state | name */
     transform: scaleX(0);
   }
   50% {
-    transform: scaleX(1);
+    transform: scaleX(0.75);
   }
 }
 
@@ -559,7 +560,7 @@ iteration-count | direction | fill-mode | play-state | name */
   }
   21%,
   56% {
-    transform: scaleX(1);
+    transform: scaleX(0.75);
   }
 }
 
@@ -571,7 +572,7 @@ iteration-count | direction | fill-mode | play-state | name */
   }
   25%,
   50% {
-    transform: scaleX(1);
+    transform: scaleX(0.75);
   }
 }
 

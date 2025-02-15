@@ -4,7 +4,7 @@ const intro = document.getElementById('intro'); // grab the intro section
 const begin = document.getElementById('begin'); // grab the begin section
 const choose = document.getElementById('choose'); // grab the choose section
 
-const beginBtn = document.getElementById('beginBtn'); // grab the intro beginBtn
+const beginBtn = document.getElementById('begin-btn'); // grab the intro beginBtn
 
 // Grab the animation states
 const calm = document.getElementById('calm');
@@ -20,16 +20,16 @@ const time5 = document.getElementById('time5');
 const time10 = document.getElementById('time10');
 
 // grab the choice elements
-const chooseCalm = document.getElementById('chooseCalm');
-const chooseClear = document.getElementById('chooseClear');
-const chooseRelax = document.getElementById('chooseRelax');
-const chooseRelieve = document.getElementById('chooseRelieve');
+const chooseCalm = document.getElementById('choose-calm');
+const chooseClear = document.getElementById('choose-clear');
+const chooseRelax = document.getElementById('choose-relax');
+const chooseRelieve = document.getElementById('choose-relieve');
 
 // grab the exercise buttons
-const calmBtn = document.getElementById('calmBtn');
-const clearBtn = document.getElementById('clearBtn');
-const relaxBtn = document.getElementById('relaxBtn');
-const relieveBtn = document.getElementById('relieveBtn');
+const calmBtn = document.getElementById('calm-btn');
+const clearBtn = document.getElementById('clear-btn');
+const relaxBtn = document.getElementById('relax-btn');
+const relieveBtn = document.getElementById('relieve-btn');
 
 // grab the lets-begin section
 const letsBegin = document.getElementById('lets-begin');
@@ -223,7 +223,10 @@ function animate() {
         hide(circle);
         // show
         show(end);
-        show(intro);
+        setTimeout(() => {
+          hide(end);
+          show(intro);
+        }, 3000);
       }
     }, 1000);
 
