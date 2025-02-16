@@ -216,6 +216,7 @@ function animate() {
         clearInterval(durationCounter);
         console.log('HEEEllooo');
         // hide
+        // can these fade out?
         hide(bar);
         hide(inhale);
         hide(exhale);
