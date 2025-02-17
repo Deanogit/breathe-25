@@ -12,8 +12,36 @@
 
 ###### The Learning Journey
 
-This project has helped me to consolidate my knowledge of - @keyframes and animations in CSS - working with the DOM - how CSS is interpreted
+**This project has helped me to consolidate my knowledge of**
 
-This project has helped me to learn new skills such as - Using data attributes in html - setTimeout & setInterval in JS - using pseudo elements (::before) - UX/UI fundamentals
+- @keyframes and animations in CSS
 
-This project has helped me to realise I can still learn a lot about - accesibility, how can I best design web applications for ALL users, I'd like to build using ARIA etc - looks like I can still improve how I use markdown also - git aswell, i only really commit and push to one branch...
+- working with the DOM
+
+- how CSS is interpreted
+
+**This project has helped me to learn new skills such as**
+
+- Using data attributes in html
+
+- setTimeout & setInterval in JS
+
+- using pseudo elements (::before)
+
+- UX/UI fundamentals
+
+**This project has helped me to realise I can still learn a lot about**
+
+- accesibility, how can I best design web applications for ALL users, I'd like to build using ARIA etc
+
+- looks like I can still improve how I use markdown also
+
+- git aswell, i only really commit and push to one branch...
+
+**TO DO**
+
+- implement cancel button
+
+- look at the date object, how can I implement the countdowntimer so the seconds render 00:01
+
+- get some feedback on UI/UX
