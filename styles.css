@@ -23,7 +23,6 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* justify-content: space-between;  if nav */
   padding: 20px;
   max-width: 90%;
   margin: 0 auto;
@@ -33,15 +32,10 @@ header {
 header h1 {
   font-weight: 100;
   letter-spacing: 0.16rem;
-  /* margin-bottom: 20px; */
 }
 
 header p {
   margin-bottom: 15px;
-}
-
-nav {
-  /* width: 100%; */
 }
 
 nav ul {
@@ -51,7 +45,6 @@ nav ul {
   justify-content: space-around;
   padding: 10px;
   flex-start: flex-end;
-  /* width: 100%; */
 }
 
 nav ul li {
@@ -59,12 +52,6 @@ nav ul li {
   align-items: center;
   justify-content: center;
   padding: 20px;
-
-  // make circles
-  /* width: 4rem;
-  height: 4rem;
-  background-color: #fafafa;
-  border-radius: 50%; */
 }
 
 nav ul li a {
@@ -143,18 +130,6 @@ main {
   position: relative;
 }
 
-/* Circle */
-/* div { moved to calm.css
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 20rem;
-  width: 20rem;
-  position: relative;
-  border-radius: 50%;
-  background-color: #fafafa;
-} */
-
 /* Sections */
 
 section {
@@ -225,197 +200,6 @@ footer a {
   color: #0a0a0b;
 }
 
-/*  begin-btn */
-/* .begin-btn {
-  position: relative;
-  width: 8rem;
-  height: 8rem;
-  background-color: #fafafa;
-  border-radius: 50%;
-  border: none;
-  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
-  font-size: 1.4rem;
-} */
-
-/* .begin-btn::before {
-  content: '';
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 4px;
-  bottom: 35%;
-  left: 0;
-  background-color: #000;
-  transform: scaleX(0);
-  transition: transform 1s ease;
-} */
-
-/* 
-This was before the bar was introduced
-.begin-btn:hover,
-.begin-btn:active {
-  background-color: #333;
-  color: #fafafa;
-} */
-
-/* .begin-btn:hover::before {
-  transform: scaleX(1.3);
-} */
-
-/* // mirror the expanding bar under the text like the links & animation... */
-/* For reference */
-/* nav ul li a {
-    text-decoration: none;
-    letter-spacing: 0.14rem;
-    color: #0a0a0b;
-    line-height: 1.4;
-    position: relative;
-  }
-  
-  nav ul li a::before {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 2px;
-    bottom: -3px;
-    left: 0;
-    background-color: #000;
-    transform: scaleX(0);
-    transition: transform 0.5s ease;
-  }
-  
-  nav ul li a:hover,
-  nav ul li a:active {
-    color: #0a0a0b;
-  }
-  
-  nav ul li a:hover::before {
-    transform: scaleX(1);
-  } */
-
-/* .time-btn {
-  width: 6rem;
-  hieght: 6rem;
-  background-color: #fafafa;
-  border-radius: 50%;
-  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
-} */
-
-/*
-/* Calm Down */
-
-/* Animation */
-/*
-main::before {
-    position: absolute;
-    content: '';
-    display: block;
-    width: 500px;
-    height: 500px;
-    transform: translateX(125px);
-    
-    background-color: #fafafa;
-    left: 25%;
-    top: 25%;
-    border-radius: 50%;
-}
-
-.circle-calm-inhale,
-.circle-calm-exhale {
-    text-align: center;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
-    /* display: none; 
-}
-
-.circle-calm-inhale {
-    animation: inhale linear 10s infinite;
-}
-
-@keyframes inhale {
-    0% {
-        /opacity: 0;
-    }
-    35% {
-        opacity: 1;
-    }
-    45% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes exhale {
-    0% {
-        opacity: 0;
-    }
-    45% {
-        opacity: 0;
-    }
-    55% {
-        opacity: 1;
-    }
-    98 % {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-.circle-calm-exhale {
-    animation: exhale linear 10s infinite;
-}
-
-@keyframes appear {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes disappear {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        display: none;
-    }
-}
-
- /* This is not working, how do I initiate this with javascript? */
-.disappear {
-  animation: disappear 3s 3s 1;
-}
-
-/* @keyframes duration | easing-function | delay |
-iteration-count | direction | fill-mode | play-state | name */
-
-/* make an animation for the begin to fade in & out */
-/* @keyframes begin {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-} */
-
-/* .begin {
-  animation: begin 4s 1;
-} */
-
 .lets-begin {
   transition: opacity 1s;
   opacity: 0;
@@ -433,6 +217,8 @@ iteration-count | direction | fill-mode | play-state | name */
   opacity: 0;
   animation: fade-in 3s 2s forwards;
 }
+
+/* Type animation sequences */
 
 @keyframes fade-in-out {
   0%,
@@ -576,17 +362,6 @@ iteration-count | direction | fill-mode | play-state | name */
   }
 }
 
-/* @keyframes inhaleCalm {
-    0%,
-    100% {
-        opacity: 0;
-    }
-    10%,
-    90% {
-        opacity: 1;
-    }
-} */
-
 .inhale {
   opacity: 0;
   /* display: block; */
@@ -630,6 +405,8 @@ iteration-count | direction | fill-mode | play-state | name */
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1;);
 }
 
+/* Bar animation sequences */
+
 @keyframes calmBar {
   0%,
   100% {
@@ -672,90 +449,3 @@ iteration-count | direction | fill-mode | play-state | name */
     transform: scaleX(0.75);
   }
 }
-
-/* @keyframes calmBarExhale {
-    0% {
-        transform: scaleX(1);
-    }
-    100% {
-        transform: scaleX(0);
-    }
-} */
-
-/* .circle::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  display: block;
-  top: 49%;
-  left: 0;
-  height: 5px;
-  background-color: #333;
-  transform: scaleX(0.1);
-  /* box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1); */
-
-/* animation: calmBar 10s infinite; */
-/* animation: clearBar 8s infinite; */
-/* animation: relaxBar 19s infinite; */
-/* animation: relieveBar 16s infinite; */
-/*
-    transition: transform 3s;  */
-/* } */
-
-/* .bar {
-  position: absolute;
-  width: 100%;
-  height: 5px;
-  display: block;
-  top: 49%;
-  left: 0;
-  background-color: #333;
-  transform: scaleX(0.1);
-  /* opacity: 0; */
-/* } */
-
-/* .circle::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    display: block;
-    top: 40%;
-    left: 0;
-    height: 5px;
-    background-color: #333;
-    transform: scaleX(1);
-    /*
-    transition: transform 3s;  
-    animation: calmBarExhale 7s;
-} */
-
-/* Work out the styles for circle, inhale, hold, exhale with position relative and absolute */
-
-/* Circle why does this not apply? */
-/* #circle {
-  /* color: red; */
-/* display: flex;
-justify-content: center;
-align-items: center;
-height: 20rem;
-width: 20rem;
-position: relative;
-border-radius: 50%;
-background-color: red !important; */
-/* opacity: 1; */
-/* transition: opacity 2s; 
-  opacity: 0; */
-/* } */
-/* .circle::before {
-  position: absolute;
-  content: '';
-  display: block;
-  width: 100%;
-  height: 2px;
-  top: 60%;
-  left: 0;
-  background-color: #000;
-  transform: scaleX(1);
-  transition: transform 0.5s ease;
-  animation: calmBar 12s infinite;
-} */
