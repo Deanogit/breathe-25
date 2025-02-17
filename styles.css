@@ -191,6 +191,7 @@ section p {
 }
 
 section button {
+  font-size: 1.2em;
   padding: 18px 32px;
   letter-spacing: 0.06rem;
   cursor: pointer;
@@ -199,6 +200,12 @@ section button {
   color: #333;
   border-radius: 3px;
   border: none;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+section button:hover,
+section button:active {
+  background: #eaeaea;
 }
 
 footer {
