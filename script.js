@@ -41,8 +41,8 @@ const circle = document.getElementById('circle');
 const bar = document.getElementById('bar');
 const inhale = document.getElementById('inhale');
 const hold1 = document.getElementById('hold1');
+const holdText = document.getElementById('hold-text');
 const exhale = document.getElementById('exhale');
-const hold2 = document.getElementById('hold2');
 
 // grab the timer & timer countdown
 const timer = document.getElementById('timer');
@@ -179,6 +179,7 @@ function animate() {
                     animation: relaxExhale 19s infinite`;
         hold1.style.cssText = `
                     animation: relaxHold 19s infinite`;
+        holdText.textContent = 'Hold for 7 seconds';
         bar.style.cssText = `
                     animation: relaxBar 19s infinite;
                     
@@ -191,6 +192,7 @@ function animate() {
                         animation: relieveExhale 16s infinite`;
         hold1.style.cssText = `
                         animation: relieveHold 16s infinite`;
+        holdText.textContent = 'Hold for 4 seconds';
         bar.style.cssText = `
                         animation: relieveBar 16s infinite;  
                         `;

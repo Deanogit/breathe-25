@@ -178,7 +178,7 @@ section h3,
 footer h4 {
   font-weight: 100;
   letter-spacing: 0.15rem;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 section h3 {
@@ -194,7 +194,8 @@ section button {
   padding: 18px 32px;
   letter-spacing: 0.06rem;
   cursor: pointer;
-  background: #;
+  margin-top: 40px;
+  /* background: #; */
 }
 
 footer {
@@ -602,7 +603,7 @@ iteration-count | direction | fill-mode | play-state | name */
 .hold1 {
   opacity: 0;
   position: absolute;
-  top: 45%;
+  /* top: 45%; */
   /* animation: sequenceRelaxHold 19s infinite; */
   /* animation: sequenceRelieveHold 16s infinite; */
 }
