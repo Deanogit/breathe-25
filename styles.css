@@ -183,6 +183,26 @@ section button:active {
   background: #eaeaea;
 }
 
+.restart {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.restart-btn {
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  /* padding: 12px 18px; */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  /* box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1); */
+  cursor: pointer;
+  /* background: rgba(0, 0, 0, 0.2); */
+  background: #d7f0ea;
+  /* font-size: 1.1em; */
+  color: #333;
+}
+
 footer {
   /* position: sticky; */
   bottom: 0;
@@ -402,7 +422,7 @@ footer a {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1;);
+  /* box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1); */
 }
 
 /* Bar animation sequences */
