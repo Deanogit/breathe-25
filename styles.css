@@ -33,7 +33,7 @@ header {
 header h1 {
   font-weight: 100;
   letter-spacing: 0.16rem;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 header p {
@@ -195,7 +195,10 @@ section button {
   letter-spacing: 0.06rem;
   cursor: pointer;
   margin-top: 40px;
-  /* background: #; */
+  background: #fafafa;
+  color: #333;
+  border-radius: 3px;
+  border: none;
 }
 
 footer {
