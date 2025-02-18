@@ -40,7 +40,7 @@
 
 **TO DO**
 
-- implement cancel button
+- ~~implement cancel button~~ - complete 16:50 18/02/25
 
 - look at the date object, how can I implement the countdowntimer so the seconds render 00:01
 
