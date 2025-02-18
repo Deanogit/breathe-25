@@ -113,7 +113,7 @@ nav ul li a:hover::before {
   position: absolute;
   top: 90%;
   left: 80%;
-  animation: fade-in 3s;
+  animation: fade-in 5s;
 }
 
 .hidden {
@@ -422,7 +422,13 @@ footer a {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   /* box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1); */
+}
+
+.timer-countdown:hover,
+.timer-countdown:active {
+  background: rgba(0, 0, 0, 0.4);
 }
 
 /* Bar animation sequences */

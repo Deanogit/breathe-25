@@ -119,15 +119,22 @@ function animate() {
   }, 3000);
 
   setTimeout(() => {
+    // maybe here I need to reset the state...?
     // show
-    show(bar);
-    show(inhale);
-    show(exhale);
-    show(hold1);
+    // show(bar);
+    // show(inhale);
+    // show(exhale);
+    // error in control flow? I don't want to show this unless it is being used...
+    // show(hold1);
 
     // use a switch statement to define which animation get applied
     switch (store.type) {
       case 'calm':
+        // show
+        show(bar);
+        show(inhale);
+        show(exhale);
+        hide(hold1);
         inhale.style.cssText = `
             animation: calmInhale 10s infinite`;
         exhale.style.cssText = `
@@ -136,6 +143,10 @@ function animate() {
             animation: calmBar 10s infinite`;
         break;
       case 'clear':
+        show(bar);
+        show(inhale);
+        show(exhale);
+        hide(hold1);
         inhale.style.cssText = `
                 animation: clearInhale 8s infinite`;
         exhale.style.cssText = `
@@ -145,6 +156,10 @@ function animate() {
                 `;
         break;
       case 'relax':
+        show(bar);
+        show(inhale);
+        show(exhale);
+        show(hold1);
         inhale.style.cssText = `
                     animation: relaxInhale 19s infinite`;
         exhale.style.cssText = `
@@ -158,6 +173,10 @@ function animate() {
                     `;
         break;
       case 'relieve':
+        show(bar);
+        show(inhale);
+        show(exhale);
+        show(hold1);
         inhale.style.cssText = `
                         animation: relieveInhale 16s infinite`;
         exhale.style.cssText = `
@@ -173,7 +192,8 @@ function animate() {
         console.log('broken');
     }
 
-    let durationCounter = setInterval(() => {
+    //let durationCounter = setInterval(() => {
+    durationCounter = setInterval(() => {
       duration = duration - 1000;
       console.log(duration);
       let minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
@@ -183,7 +203,7 @@ function animate() {
       if (duration <= 0) {
         // stop the counter
         clearInterval(durationCounter);
-        console.log('HEEEllooo');
+        console.log('HEEEllooo', store.time);
         // hide
         // can these fade out?
         hide(bar);
@@ -219,3 +239,38 @@ function hide(id) {
     id.classList.add('hidden');
   }
 }
+
+// do I not reset the store object?
+window.addEventListener('click', function () {
+  console.log(store.time);
+});
+
+// how might I add a hover effect to the timerCountdown so that it fires off a reset?
+// timer.addEventListener('mouseenter', () => {
+//   timerCountdown.style.opacity = '0';
+// });
+// timer.addEventListener('mouseleave', () => {
+//   timerCountdown.style.opacity = '1';
+// });
+
+// click
+timer.addEventListener('click', () => {
+  // reset timer
+  clearInterval(durationCounter);
+  // store.time = '00:00';
+  // hide
+  // can these fade out?
+  hide(bar);
+  hide(inhale);
+  hide(exhale);
+  hide(hold1);
+  hide(circle);
+  // show
+  show(end);
+  setTimeout(() => {
+    hide(end);
+    show(intro);
+  }, 3000);
+});
+
+let durationCounter;
