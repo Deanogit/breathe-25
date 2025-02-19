@@ -198,7 +198,10 @@ function animate() {
       console.log(duration);
       let minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
       let seconds = Math.floor((duration % (1000 * 60)) / 1000);
-      // can i implement the seconds to render 00:01 when less than 10s?
+      // can i implement the seconds to render 00:01 when less than 10s? 09 9
+      if (seconds < 10) {
+        seconds = `0${seconds}`;
+      }
       timerCountdown.textContent = `${minutes}:${seconds}`;
       if (duration <= 0) {
         // stop the counter
@@ -273,4 +276,14 @@ timer.addEventListener('click', () => {
   }, 3000);
 });
 
+// Initiate a global duration counter
 let durationCounter;
+
+// countdown timer with the date object
+
+// const testTime = setInterval(() => {
+//   let end = new Date().getSeconds() + 60;
+//   console.log(end);
+//   let now = new Date().getSeconds();
+//   console.log(end, now);
+// }, 1000);
